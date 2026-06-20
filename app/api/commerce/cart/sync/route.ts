@@ -1,0 +1,30 @@
+import { NextRequest, NextResponse } from "next/server";
+import { createAdminClient } from "@/lib/supabase/client";
+import { CommerceError, toApiError } from "@/lib/commerce/contracts/errors";
+import { syncCartSchema } from "@/lib/commerce/contracts/schemas";
+import { syncServerCart } from "@/lib/commerce/services/checkout";
+import { rateLimit } from "@/lib/commerce/middleware/rate-limit";
+
+export async function POST(req: NextRequest) {
+  try {
+    const limited = rateLimit(req);
+    if (limited) return limited;
+
+    const body: unknown = await req.json();
+    const parsed = syncCartSchema.safeParse(body);
+    if (!parsed.success) {
+      throw new CommerceError("VALIDATION_ERROR", parsed.error.message, 400);
+    }
+
+    const supabase = createAdminClient();
+    const result = await syncServerCart(
+      supabase,
+      parsed.data.sessionToken,
+      parsed.data.lines
+    );
+    return NextResponse.json(result);
+  } catch (error) {
+    const { status, body } = toApiError(error);
+    return NextResponse.json(body, { status });
+  }
+}

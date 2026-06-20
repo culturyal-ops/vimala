@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: 40 33% 98%;
+    --surface: 36 43% 93%;
+    --foreground: 20 18% 9%;
+    --card: 40 33% 98%;
+    --card-foreground: 20 18% 9%;
+    --popover: 40 33% 98%;
+    --popover-foreground: 20 18% 9%;
+    --primary: 345 77% 20%;
+    --primary-foreground: 40 33% 98%;
+    --secondary: 36 24% 92%;
+    --secondary-foreground: 20 18% 9%;
+    --muted: 36 20% 94%;
+    --muted-foreground: 30 8% 45%;
+    --accent: 46 65% 52%;
+    --accent-foreground: 20 18% 9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 36 18% 88%;
+    --input: 36 18% 88%;
+    --ring: 345 77% 20%;
+    --radius: 0px;
+    --header-height: 7rem;
+    --bottom-nav-height: 4.25rem;
+    --promo-height: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --header-height: 9.5rem;
+      --bottom-nav-height: 0px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-canvas text-ink font-body antialiased;
+    padding-bottom: env(safe-area-inset-bottom);
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-medium tracking-tight text-ink;
+  }
+}
+
+::selection {
+  background: #d4af37;
+  color: #1c1412;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #faf8f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4b8a8;
+  border-radius: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hero-arch-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 280' fill='none'%3E%3Cpath d='M10 280 L10 120 Q10 10 100 10 Q190 10 190 120 L190 280' stroke='%235B0D1E' stroke-width='1' fill='none'/%3E%3Cpath d='M30 280 L30 130 Q30 40 100 40 Q170 40 170 130 L170 280' stroke='%23D4AF37' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+  background-size: 120px 168px;
+  background-repeat: repeat;
+}
+
+.paisley-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 8 C24 16 14 18 10 28 C18 24 24 30 30 40 C36 30 42 24 50 28 C46 18 36 16 30 8Z' fill='%23D4AF37' fill-opacity='0.06'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+.damask-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 10 C30 20 20 20 10 40 C20 40 30 50 40 60 C50 50 60 40 70 40 C60 20 50 20 40 10Z' stroke='%23D4AF37' stroke-width='0.5' fill='none' opacity='0.12'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+.arch-clip {
+  border-radius: 50% 50% 0 0 / 18% 18% 0 0;
+  overflow: hidden;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #e8c85a 0%, #d4af37 50%, #b8942e 100%);
+}
+
+.text-outline-gold {
+  -webkit-text-stroke: 1px #d4af37;
+  color: transparent;
+}
+
+@layer components {
+  .flat-panel {
+    @apply border border-border bg-canvas;
+  }
+
+  .flat-panel-muted {
+    @apply border border-border bg-surface;
+  }
+
+  .editorial-card {
+    @apply border border-border bg-canvas transition-shadow duration-300 hover:shadow-premium;
+  }
+
+  .touch-target {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+  }
+
+  .page-container {
+    @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 md:px-10 lg:px-12;
+  }
+
+  .section-pad {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
+
+  .label-caps {
+    @apply font-body text-[10px] font-medium uppercase tracking-[0.22em] text-stone;
+  }
+
+  .nav-link {
+    @apply font-body text-[11px] font-medium uppercase tracking-[0.18em] text-ink transition-colors duration-200 hover:text-crimson;
+  }
+
+  .product-grid {
+    @apply grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-2 md:grid-cols-3 md:gap-x-6 lg:grid-cols-4 lg:gap-x-10;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .safe-bottom {
+    padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .pt-header {
+    padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+  }
+}
