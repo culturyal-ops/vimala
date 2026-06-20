@@ -30,6 +30,7 @@ export const NAV_LINKS = [
   { label: "About", href: "/about" },
   { label: "Shipping", href: "/shipping" },
   { label: "Contact", href: "/contact" },
+  { label: "My Orders", href: "/account" },
 ] as const;
 
 export const CATEGORIES = SILK_CATEGORIES;

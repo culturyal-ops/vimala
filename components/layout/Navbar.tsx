@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 import { PromoTicker } from "@/components/layout/PromoTicker";
 import { SearchDialog } from "@/components/layout/SearchDialog";
 import { BagButton } from "@/components/cart/BagButton";
+import { AccountButton } from "@/components/layout/AccountButton";
 import { MegaMenu } from "@/components/layout/MegaMenu";
 import {
   Sheet,
@@ -112,6 +113,20 @@ export function Navbar() {
                       {link.label}
                     </Link>
                   ))}
+                  <Link
+                    href="/login"
+                    onClick={() => setMobileOpen(false)}
+                    className="border-b border-border py-3.5 font-body text-sm font-medium uppercase tracking-widest text-ink hover:text-crimson"
+                  >
+                    Sign In
+                  </Link>
+                  <Link
+                    href="/account"
+                    onClick={() => setMobileOpen(false)}
+                    className="border-b border-border py-3.5 font-body text-sm font-medium uppercase tracking-widest text-ink hover:text-crimson"
+                  >
+                    My Orders
+                  </Link>
                   <p className="label-caps mt-6 mb-2">Departments</p>
                   {DEPARTMENTS.map((d) => (
                     <Link
@@ -147,6 +162,7 @@ export function Navbar() {
             >
               Stores
             </Link>
+            <AccountButton />
             <BagButton className="touch-target text-ink-muted hover:text-crimson" />
           </div>
         </div>
