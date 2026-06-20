@@ -8,12 +8,10 @@ import {
 } from "@/lib/commerce/services/payments";
 import { createShipment } from "@/lib/commerce/services/shipping";
 import { queueNotification } from "@/lib/commerce/services/notifications";
-import { rateLimit } from "@/lib/commerce/middleware/rate-limit";
 
 export async function POST(req: NextRequest) {
   try {
-    const limited = rateLimit(req, 20);
-    if (limited) return limited;
+    // Rate limiting handled by middleware
 
     const body: unknown = await req.json();
     const parsed = razorpayVerifySchema.safeParse(body);

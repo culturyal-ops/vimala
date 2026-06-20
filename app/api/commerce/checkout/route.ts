@@ -4,12 +4,10 @@ import { CommerceError, toApiError } from "@/lib/commerce/contracts/errors";
 import { createCheckoutSchema } from "@/lib/commerce/contracts/schemas";
 import { createOrderFromCheckout } from "@/lib/commerce/services/checkout";
 import { trackEvent } from "@/lib/commerce/services/analytics";
-import { rateLimit } from "@/lib/commerce/middleware/rate-limit";
 
 export async function POST(req: NextRequest) {
   try {
-    const limited = rateLimit(req, 30);
-    if (limited) return limited;
+    // Rate limiting handled by middleware
 
     const body: unknown = await req.json();
     const parsed = createCheckoutSchema.safeParse(body);

@@ -3,12 +3,10 @@ import { createAdminClient } from "@/lib/supabase/client";
 import { CommerceError, toApiError } from "@/lib/commerce/contracts/errors";
 import { analyticsEventSchema } from "@/lib/commerce/contracts/schemas";
 import { trackEvent } from "@/lib/commerce/services/analytics";
-import { rateLimit } from "@/lib/commerce/middleware/rate-limit";
 
 export async function POST(req: NextRequest) {
   try {
-    const limited = rateLimit(req, 120);
-    if (limited) return limited;
+    // Rate limiting handled by middleware
 
     const body: unknown = await req.json();
     const parsed = analyticsEventSchema.safeParse(body);
