@@ -86,7 +86,7 @@ export default async function ProductPage({ params }: Props) {
 
         {related.length > 0 && (
           <div className="mt-16 border-t border-gold/15 pt-12 sm:mt-20 sm:pt-16">
-            <SectionTitle title="You May Also Like" align="left" showLotus={false} />
+            <SectionTitle title="You May Also Like" align="left" />
             <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 md:gap-5">
               {related.map((p) => (
                 <ProductCard

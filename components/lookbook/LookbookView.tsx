@@ -129,7 +129,7 @@ export function LookbookView({ lookbook }: LookbookViewProps) {
         })}
 
         <div className="mt-20 text-center">
-          <SectionTitle title="Explore More" showLotus={false} />
+          <SectionTitle title="Explore More" />
           <div className="flex flex-wrap justify-center gap-3">
             <Button asChild>
               <Link href="/shop/category/bridal">Shop Bridal</Link>
