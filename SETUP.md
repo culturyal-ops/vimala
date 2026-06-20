@@ -65,6 +65,49 @@ In **Supabase Dashboard → Authentication → URL Configuration**:
 
 Save, then redeploy Vercel after updating env vars.
 
+## Admin / VRM (orders, products, CRM)
+
+The **admin panel is a separate app** — not on the storefront Vercel URL.
+
+| Environment | URL | Login |
+|-------------|-----|-------|
+| **Storefront (customers)** | https://vimalasilkhouse.vercel.app | `/login` (email OTP) |
+| **Admin VRM (local)** | http://localhost:3001/login | `admin@vimalasilk.com` / `vimala@revolq` |
+| **Admin VRM (production)** | **Not deployed yet** | Deploy `vimala vrm/vimala-vrm` as its own Vercel project → e.g. `admin.vimalasilk.com` |
+
+Run admin locally:
+
+```powershell
+cd "C:\Users\eathe\vimala vrm\vimala-vrm"
+npm run dev -- -p 3001
+```
+
+Then open **http://localhost:3001/login**
+
+---
+
+## Branded auth emails (fix “Supabase Auth” sender)
+
+SQL cannot change email branding. Do this in **Supabase Dashboard**:
+
+1. **Authentication → Providers → Email** → turn **OFF** “Confirm email” (OTP is enough)
+2. **Authentication → Email Templates → Magic Link**
+   - **Subject:** `Your Vimala Silk House sign-in code`
+   - **Body** must include `{{ .Token }}` for the 6-digit OTP, e.g.:
+
+```html
+<h2 style="font-family: Georgia, serif; color: #6b1d2a;">Vimala Silk House</h2>
+<p>Your sign-in code (expires in 10 minutes):</p>
+<p style="font-size: 28px; letter-spacing: 0.3em;">{{ .Token }}</p>
+```
+
+3. **Authentication → SMTP Settings** (optional but recommended)
+   - Sender name: `Vimala Silk House`
+   - Sender email: `hello@vimalasilk.com` (or your domain)
+   - Use Resend / SendGrid / Gmail SMTP so emails don’t say “Supabase”
+
+---
+
 ## Auth: no email + localhost redirect
 
 **SQL does not fix redirects or send emails.** Those are Supabase Dashboard settings.

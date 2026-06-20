@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { User, LogOut, Package, LogIn, UserPlus } from "lucide-react";
+import { User, LogOut, Package, LogIn } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { cn } from "@/lib/utils";
 
@@ -119,13 +119,6 @@ export function AccountButton({ className }: { className?: string }) {
             >
               <LogIn className="h-4 w-4" />
               Sign in
-            </Link>
-            <Link
-              href="/signup"
-              className="flex items-center gap-2 px-3 py-2 font-body text-sm text-ink hover:bg-surface hover:text-crimson"
-            >
-              <UserPlus className="h-4 w-4" />
-              Sign up
             </Link>
             <Link
               href="/account"

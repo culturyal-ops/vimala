@@ -70,10 +70,7 @@ export default function AccountPage() {
         ) : (
           <div className="flex gap-2">
             <Button variant="outline" size="sm" asChild>
-              <Link href="/login">Sign in</Link>
-            </Button>
-            <Button size="sm" asChild>
-              <Link href="/signup">Sign up</Link>
+              <Link href="/login">Sign in with code</Link>
             </Button>
           </div>
         )}
