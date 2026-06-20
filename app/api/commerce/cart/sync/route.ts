@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/client";
-import { CommerceError, toApiError } from "@/lib/commerce/contracts/schemas";
+import { CommerceError, toApiError } from "@/lib/commerce/contracts/errors";
 import { syncCartSchema } from "@/lib/commerce/contracts/schemas";
 import { syncServerCart } from "@/lib/commerce/services/checkout";
 
