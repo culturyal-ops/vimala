@@ -97,33 +97,33 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-[calc(100vh-var(--header-height))] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-lg">
-        <div className="text-center mb-10">
-          <p className="font-body text-[10px] font-medium uppercase tracking-[0.45em] text-gold-muted mb-4">
+    <div className="min-h-[calc(100vh-var(--header-height))] flex items-center justify-center px-4 py-16">
+      <div className="w-full max-w-lg animate-fadeIn">
+        <div className="text-center mb-12">
+          <p className="font-body text-[10px] font-medium uppercase tracking-[0.45em] text-gold-muted mb-6">
             Vimala Silk House
           </p>
-          <h1 className="font-display text-4xl text-crimson mb-3">
-            Your shopping account
+          <h1 className="font-display text-5xl text-ink mb-4">
+            Welcome
           </h1>
-          <p className="font-body text-sm text-ink/60 max-w-md mx-auto">
-            Sign in with a one-time code. No password to remember.
+          <p className="font-body text-base text-stone max-w-md mx-auto">
+            Sign in with a secure one-time code sent to your email
           </p>
         </div>
 
-        <div className="bg-ivory-warm border border-gold/20 rounded-2xl p-8 md:p-10">
+        <div className="flat-panel rounded-2xl p-10 shadow-premium">
           {step === "email" ? (
             <>
-              <form onSubmit={handleEmailSubmit} className="space-y-6">
+              <form onSubmit={handleEmailSubmit} className="space-y-7">
                 <div>
                   <label
                     htmlFor="email"
-                    className="block font-body text-xs font-medium uppercase tracking-wider text-ink/60 mb-2"
+                    className="block font-body text-xs font-medium uppercase tracking-wider text-stone mb-3"
                   >
-                    Email address
+                    Email Address
                   </label>
                   <div className="relative">
-                    <Mail className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-ink/30" />
+                    <Mail className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-light" />
                     <input
                       id="email"
                       type="email"
@@ -132,28 +132,28 @@ export default function LoginPage() {
                       autoFocus
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="you@example.com"
-                      className="w-full rounded-xl border border-gold/30 bg-white py-3.5 pl-12 pr-4 font-body text-base outline-none transition-all focus:border-crimson focus:ring-2 focus:ring-crimson/10"
+                      placeholder="your@email.com"
+                      className="w-full rounded-xl border border-slate bg-white py-4 pl-12 pr-4 font-body text-base outline-none transition-all duration-200 placeholder:text-stone-light focus:border-crimson focus:ring-4 focus:ring-crimson/10"
                     />
                   </div>
                 </div>
 
                 {error && (
-                  <div className="rounded-lg bg-crimson/5 border border-crimson/20 p-3">
+                  <div className="rounded-xl bg-crimson/5 border border-crimson/20 p-4">
                     <p className="font-body text-sm text-crimson">{error}</p>
                   </div>
                 )}
 
-                <Button type="submit" disabled={loading} className="w-full py-6 text-base">
-                  {loading ? "Sending code..." : "Continue with email"}
+                <Button type="submit" disabled={loading} className="w-full h-14 text-base font-medium shadow-premium-sm hover:shadow-premium hover:-translate-y-0.5 transition-all">
+                  {loading ? "Sending code..." : "Continue"}
                 </Button>
               </form>
 
-              <div className="mt-8 pt-8 border-t border-gold/15">
-                <p className="text-center font-body text-sm text-ink/50">
+              <div className="mt-10 pt-10 border-t border-slate">
+                <p className="text-center font-body text-sm text-stone">
                   Ordered as a guest?{" "}
-                  <Link href="/account" className="text-crimson hover:underline font-medium">
-                    Track order without signing in
+                  <Link href="/account" className="text-crimson hover:underline font-medium underline-offset-2">
+                    Track your order
                   </Link>
                 </p>
               </div>
@@ -167,27 +167,27 @@ export default function LoginPage() {
                   setError(null);
                   setOtp("");
                 }}
-                className="mb-8 inline-flex items-center gap-2 font-body text-xs uppercase tracking-wider text-ink/50 hover:text-crimson transition-colors"
+                className="mb-10 inline-flex items-center gap-2 font-body text-xs uppercase tracking-wider text-stone hover:text-crimson transition-colors"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Change email
               </button>
 
-              <div className="mb-8">
-                <h2 className="font-display text-2xl text-crimson mb-3">
-                  Enter your code
+              <div className="mb-10 text-center">
+                <h2 className="font-display text-3xl text-ink mb-3">
+                  Check your inbox
                 </h2>
-                <p className="font-body text-sm text-ink/60">
-                  We sent a 6-digit code to{" "}
-                  <span className="font-medium text-ink">{email}</span>
+                <p className="font-body text-base text-stone">
+                  We sent a 6-digit code to<br />
+                  <span className="font-medium text-ink mt-1 inline-block">{email}</span>
                 </p>
               </div>
 
-              <form onSubmit={handleOtpSubmit} className="space-y-6">
+              <form onSubmit={handleOtpSubmit} className="space-y-7">
                 <OtpInput value={otp} onChange={setOtp} disabled={loading} />
 
                 {error && (
-                  <div className="rounded-lg bg-crimson/5 border border-crimson/20 p-3">
+                  <div className="rounded-xl bg-crimson/5 border border-crimson/20 p-4">
                     <p className="text-center font-body text-sm text-crimson">
                       {error}
                     </p>
@@ -197,18 +197,18 @@ export default function LoginPage() {
                 <Button
                   type="submit"
                   disabled={loading || otp.length !== 6}
-                  className="w-full py-6 text-base"
+                  className="w-full h-14 text-base font-medium shadow-premium-sm hover:shadow-premium hover:-translate-y-0.5 transition-all"
                 >
-                  {loading ? "Verifying..." : "Verify and continue"}
+                  {loading ? "Verifying..." : "Continue"}
                 </Button>
 
-                <p className="text-center font-body text-sm text-ink/50">
+                <p className="text-center font-body text-sm text-stone">
                   Didn&apos;t receive it?{" "}
                   <button
                     type="button"
                     disabled={resendIn > 0 || loading}
                     onClick={() => sendCode(email)}
-                    className="text-crimson hover:underline disabled:text-ink/30 font-medium"
+                    className="text-crimson hover:underline disabled:text-stone-light disabled:no-underline font-medium underline-offset-2 transition-colors"
                   >
                     {resendIn > 0 ? `Resend in ${resendIn}s` : "Resend code"}
                   </button>
@@ -218,7 +218,7 @@ export default function LoginPage() {
           )}
         </div>
 
-        <p className="text-center font-body text-xs text-ink/40 mt-8">
+        <p className="text-center font-body text-xs text-stone-light mt-10">
           Est. 1987 | Kattappana, Kerala
         </p>
       </div>

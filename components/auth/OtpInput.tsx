@@ -51,7 +51,7 @@ export function OtpInput({
   }
 
   return (
-    <div className="flex justify-center gap-2 sm:gap-3">
+    <div className="flex justify-center gap-3">
       {digits.map((digit, index) => (
         <input
           key={index}
@@ -69,9 +69,9 @@ export function OtpInput({
           onKeyDown={(e) => handleKeyDown(index, e)}
           onPaste={handlePaste}
           className={cn(
-            "h-12 w-10 rounded-lg border border-gold/30 bg-ivory-warm text-center font-display text-xl text-ink outline-none transition-colors",
-            "focus:border-crimson focus:ring-2 focus:ring-crimson/15 sm:h-14 sm:w-12 sm:text-2xl",
-            disabled && "opacity-50"
+            "h-14 w-12 rounded-xl border border-slate bg-white text-center font-display text-2xl text-ink outline-none transition-all",
+            "focus:border-crimson focus:ring-4 focus:ring-crimson/10 focus:scale-105",
+            disabled && "opacity-50 cursor-not-allowed"
           )}
         />
       ))}
