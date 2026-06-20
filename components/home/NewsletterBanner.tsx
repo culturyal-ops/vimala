@@ -29,7 +29,7 @@ export function NewsletterBanner() {
           Be the First to Know
         </h2>
         <p className="mx-auto mb-8 max-w-lg font-body text-base text-ivory/60">
-          New arrivals, bridal collections, and exclusive offers — straight to
+          New arrivals, bridal collections, and exclusive offers straight to
           your inbox.
         </p>
         <form

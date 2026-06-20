@@ -12,7 +12,7 @@ import { STORE } from "@/lib/store-info";
 export const metadata: Metadata = pageMetadata({
   title: "Readymade Fashion for Men, Women & Kids | Vimala Silk House",
   description:
-    "Shop everyday wear, summer collections, and family fashion online from Vimala Silk House, Kattappana — quality readymade garments shipped worldwide.",
+    "Shop everyday wear, summer collections, and family fashion online from Vimala Silk House, Kattappana. Quality readymade garments shipped worldwide.",
   path: "/collections/readymade",
 });
 

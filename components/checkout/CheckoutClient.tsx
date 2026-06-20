@@ -146,7 +146,7 @@ export function CheckoutClient() {
       const result = await validateCoupon(couponCode.trim(), subtotal);
       if (result.valid) {
         setDiscount(result.discountAmount);
-        setCouponMessage(`Applied — saved ${formatPrice(result.discountAmount)}`);
+        setCouponMessage(`Applied. Saved ${formatPrice(result.discountAmount)}`);
       } else {
         setDiscount(0);
         setCouponMessage(result.message ?? "Invalid coupon");

@@ -56,7 +56,7 @@ function VideoFrame({ frame }: { frame: CustomerVideoFrame }) {
             ? playing
               ? `Pause ${frame.label ?? "video"}`
               : `Play ${frame.label ?? "video"}`
-            : `${frame.label ?? "Video"} — coming soon`
+            : `${frame.label ?? "Video"}, coming soon`
         }
       >
         {hasVideo && frame.videoUrl ? (
@@ -138,7 +138,7 @@ export function CustomerVideoReel() {
             <p className="label-caps mb-2">From Our Customers</p>
             <h2 className="font-display text-display-md text-ink">Loved Across Kerala</h2>
             <p className="mt-2 max-w-lg font-body text-sm text-stone">
-              Real drapes, real celebrations — scroll through moments from weddings,
+              Real drapes, real celebrations. Scroll through moments from weddings,
               festivals, and family visits to Vimala Silk House.
             </p>
           </div>

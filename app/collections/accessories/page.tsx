@@ -11,7 +11,7 @@ import { enrichProduct, toBagProduct } from "@/lib/product-seo";
 export const metadata: Metadata = pageMetadata({
   title: "Jewellery & Fashion Accessories Online | Vimala Silk House",
   description:
-    "Complete your saree or outfit with curated jewellery and lifestyle accessories from Vimala Silk House — shipped worldwide.",
+    "Complete your saree or outfit with curated jewellery and lifestyle accessories from Vimala Silk House. Shipped worldwide.",
   path: "/collections/accessories",
 });
 

@@ -8,7 +8,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 const STEPS = [
   "Tell us the occasion, quantity, and timeline",
   "We'll recommend collections that fit your budget and theme",
-  "We confirm sizing, pricing, and delivery — including international shipping if needed",
+  "We confirm sizing, pricing, and delivery (including international shipping if needed)",
   "Your order ships in time for the event",
 ] as const;
 
@@ -47,7 +47,7 @@ export function BulkOrderForm() {
       >
         <SectionTitle
           title="Request a Quote"
-          subtitle="Bulk orders need a quote — tell us what you need"
+          subtitle="Bulk orders need a quote. Tell us what you need"
           align="left"
           className="mb-6"
         />

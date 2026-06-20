@@ -54,7 +54,7 @@ export function ProductGallery({ images, alt, badge }: ProductGalleryProps) {
             <div className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-ivory-warm">
               <Image
                 src={src}
-                alt={`${alt} — view ${index + 1}`}
+                alt={`${alt}, view ${index + 1}`}
                 fill
                 className="object-cover"
                 priority={index === 0}

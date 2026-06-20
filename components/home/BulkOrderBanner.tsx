@@ -18,7 +18,7 @@ export function BulkOrderBanner() {
               Bulk Orders Welcome
             </h2>
             <p className="mt-2 max-w-lg font-body text-sm leading-relaxed text-ivory/70">
-              Weddings, festivals, community programmes — we maintain inventory
+              Weddings, festivals, community programmes. We maintain inventory
               for large orders. Readymade garments in standard sizes only.
             </p>
           </div>

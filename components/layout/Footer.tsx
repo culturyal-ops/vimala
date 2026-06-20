@@ -23,8 +23,8 @@ export function Footer() {
                 Vimala Silk House
               </h3>
               <p className="font-body text-sm leading-relaxed">
-                Kattappana&apos;s premier multi-brand fashion destination — silks,
-                readymade garments, accessories &amp; more for the whole family.
+                Kattappana&apos;s premier multi-brand fashion destination. Silks,
+                readymade garments, accessories and more for the whole family.
               </p>
               <p className="mt-3 font-body text-xs text-ivory/50">
                 {STORE.note}

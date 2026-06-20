@@ -25,7 +25,7 @@ export default function AboutPage() {
           Our Legacy
         </h1>
         <p className="mt-4 font-body text-sm text-ink/55">
-          Part of the Vimala name in Kattappana — silk, fashion, and trust
+          Part of the Vimala name in Kattappana. Silk, fashion, and trust
           across generations.
         </p>
       </div>

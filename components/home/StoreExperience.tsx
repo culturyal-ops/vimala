@@ -26,7 +26,7 @@ export function StoreExperience() {
       >
         <SectionTitle
           title="Visit the House"
-          subtitle="Kattappana's multi-floor boutique — silks, readymade, and personal service since 1987."
+          subtitle="Kattappana's multi-floor boutique. Silks, readymade, and personal service since 1987."
         />
 
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
@@ -59,7 +59,7 @@ export function StoreExperience() {
             <div className="glass-panel rounded-3xl p-5 sm:p-6">
               <p className="font-display text-base text-crimson">Personal Stylist</p>
               <p className="mt-2 font-body text-sm text-ink/55">
-                Share your occasion and budget — we&apos;ll curate silks and readymade
+                Share your occasion and budget. We&apos;ll curate silks and readymade
                 picks on WhatsApp before you visit or order.
               </p>
               <Button variant="gold" asChild className="mt-4 w-full sm:w-auto">

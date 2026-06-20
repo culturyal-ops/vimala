@@ -97,62 +97,33 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-[calc(100vh-var(--header-height))] md:grid md:grid-cols-2">
-      <div className="relative hidden flex-col justify-between bg-ink-soft p-12 text-ivory md:flex lg:p-16">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg, #D4AF37 0, #D4AF37 1px, transparent 0, transparent 48px)",
-          }}
-        />
-        <div className="relative">
-          <p className="font-body text-[10px] font-medium uppercase tracking-[0.55em] text-gold">
+    <div className="min-h-[calc(100vh-var(--header-height))] flex items-center justify-center px-4 py-12">
+      <div className="w-full max-w-lg">
+        <div className="text-center mb-10">
+          <p className="font-body text-[10px] font-medium uppercase tracking-[0.45em] text-gold-muted mb-4">
             Vimala Silk House
           </p>
-          <h1 className="mt-6 font-display text-4xl font-light leading-tight lg:text-5xl">
-            Your private
-            <br />
-            shopping account
+          <h1 className="font-display text-4xl text-crimson mb-3">
+            Your shopping account
           </h1>
-          <p className="mt-5 max-w-sm font-body text-sm leading-relaxed text-ivory/60">
-            Sign in with a one-time code — no password to remember. Track
-            orders, faster checkout, curated for you.
+          <p className="font-body text-sm text-ink/60 max-w-md mx-auto">
+            Sign in with a one-time code. No password to remember.
           </p>
         </div>
-        <p className="relative font-body text-xs text-ivory/40">
-          Est. 1987 · Kattappana, Kerala
-        </p>
-      </div>
 
-      <div className="flex items-center justify-center px-4 py-16 md:px-10 md:py-24">
-        <div className="w-full max-w-md">
-          <div className="md:hidden">
-            <p className="font-body text-[10px] font-medium uppercase tracking-[0.45em] text-gold-muted">
-              Vimala Silk House
-            </p>
-          </div>
-
+        <div className="bg-ivory-warm border border-gold/20 rounded-2xl p-8 md:p-10">
           {step === "email" ? (
             <>
-              <h2 className="mt-4 font-display text-3xl text-crimson md:mt-0 md:text-4xl">
-                Sign in
-              </h2>
-              <p className="mt-3 font-body text-sm text-ink/55">
-                We&apos;ll email you a secure 6-digit code. Works for new and
-                returning customers.
-              </p>
-
-              <form onSubmit={handleEmailSubmit} className="mt-8 space-y-5">
+              <form onSubmit={handleEmailSubmit} className="space-y-6">
                 <div>
                   <label
                     htmlFor="email"
-                    className="font-body text-[10px] font-medium uppercase tracking-widest text-ink/50"
+                    className="block font-body text-xs font-medium uppercase tracking-wider text-ink/60 mb-2"
                   >
                     Email address
                   </label>
-                  <div className="relative mt-2">
-                    <Mail className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink/30" />
+                  <div className="relative">
+                    <Mail className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-ink/30" />
                     <input
                       id="email"
                       type="email"
@@ -162,19 +133,30 @@ export default function LoginPage() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="you@example.com"
-                      className="w-full rounded-lg border border-gold/25 bg-ivory-warm py-3 pl-10 pr-4 font-body text-sm outline-none transition-colors focus:border-crimson/50"
+                      className="w-full rounded-xl border border-gold/30 bg-white py-3.5 pl-12 pr-4 font-body text-base outline-none transition-all focus:border-crimson focus:ring-2 focus:ring-crimson/10"
                     />
                   </div>
                 </div>
 
                 {error && (
-                  <p className="font-body text-sm text-crimson">{error}</p>
+                  <div className="rounded-lg bg-crimson/5 border border-crimson/20 p-3">
+                    <p className="font-body text-sm text-crimson">{error}</p>
+                  </div>
                 )}
 
-                <Button type="submit" disabled={loading} className="w-full">
-                  {loading ? "Sending code…" : "Continue with email"}
+                <Button type="submit" disabled={loading} className="w-full py-6 text-base">
+                  {loading ? "Sending code..." : "Continue with email"}
                 </Button>
               </form>
+
+              <div className="mt-8 pt-8 border-t border-gold/15">
+                <p className="text-center font-body text-sm text-ink/50">
+                  Ordered as a guest?{" "}
+                  <Link href="/account" className="text-crimson hover:underline font-medium">
+                    Track order without signing in
+                  </Link>
+                </p>
+              </div>
             </>
           ) : (
             <>
@@ -185,45 +167,48 @@ export default function LoginPage() {
                   setError(null);
                   setOtp("");
                 }}
-                className="mb-6 inline-flex items-center gap-1.5 font-body text-xs uppercase tracking-widest text-ink/45 hover:text-crimson"
+                className="mb-8 inline-flex items-center gap-2 font-body text-xs uppercase tracking-wider text-ink/50 hover:text-crimson transition-colors"
               >
-                <ArrowLeft className="h-3.5 w-3.5" />
+                <ArrowLeft className="h-4 w-4" />
                 Change email
               </button>
 
-              <h2 className="font-display text-3xl text-crimson md:text-4xl">
-                Enter your code
-              </h2>
-              <p className="mt-3 font-body text-sm text-ink/55">
-                Sent to{" "}
-                <span className="font-medium text-ink">{email}</span>. Check
-                inbox and spam.
-              </p>
+              <div className="mb-8">
+                <h2 className="font-display text-2xl text-crimson mb-3">
+                  Enter your code
+                </h2>
+                <p className="font-body text-sm text-ink/60">
+                  We sent a 6-digit code to{" "}
+                  <span className="font-medium text-ink">{email}</span>
+                </p>
+              </div>
 
-              <form onSubmit={handleOtpSubmit} className="mt-8 space-y-6">
+              <form onSubmit={handleOtpSubmit} className="space-y-6">
                 <OtpInput value={otp} onChange={setOtp} disabled={loading} />
 
                 {error && (
-                  <p className="text-center font-body text-sm text-crimson">
-                    {error}
-                  </p>
+                  <div className="rounded-lg bg-crimson/5 border border-crimson/20 p-3">
+                    <p className="text-center font-body text-sm text-crimson">
+                      {error}
+                    </p>
+                  </div>
                 )}
 
                 <Button
                   type="submit"
                   disabled={loading || otp.length !== 6}
-                  className="w-full"
+                  className="w-full py-6 text-base"
                 >
-                  {loading ? "Verifying…" : "Verify & continue"}
+                  {loading ? "Verifying..." : "Verify and continue"}
                 </Button>
 
-                <p className="text-center font-body text-xs text-ink/45">
-                  Didn&apos;t get it?{" "}
+                <p className="text-center font-body text-sm text-ink/50">
+                  Didn&apos;t receive it?{" "}
                   <button
                     type="button"
                     disabled={resendIn > 0 || loading}
                     onClick={() => sendCode(email)}
-                    className="text-crimson hover:underline disabled:text-ink/30"
+                    className="text-crimson hover:underline disabled:text-ink/30 font-medium"
                   >
                     {resendIn > 0 ? `Resend in ${resendIn}s` : "Resend code"}
                   </button>
@@ -231,16 +216,11 @@ export default function LoginPage() {
               </form>
             </>
           )}
-
-          <div className="mt-10 border-t border-gold/15 pt-6">
-            <p className="font-body text-sm text-ink/50">
-              Ordered as a guest?{" "}
-              <Link href="/account" className="text-crimson hover:underline">
-                Track order without signing in
-              </Link>
-            </p>
-          </div>
         </div>
+
+        <p className="text-center font-body text-xs text-ink/40 mt-8">
+          Est. 1987 | Kattappana, Kerala
+        </p>
       </div>
     </div>
   );

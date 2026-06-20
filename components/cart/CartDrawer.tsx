@@ -33,7 +33,7 @@ export function CartDrawer() {
   const whatsappLines = items
     .map(
       (item) =>
-        `• ${item.name}${item.size ? ` (${item.size})` : ""} × ${item.quantity} — ${formatPrice(item.price * item.quantity)}`
+        `• ${item.name}${item.size ? ` (${item.size})` : ""} × ${item.quantity} | ${formatPrice(item.price * item.quantity)}`
     )
     .join("\n");
   const whatsappMessage = encodeURIComponent(

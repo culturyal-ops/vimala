@@ -17,7 +17,7 @@ export const STORE = {
   rating: { score: 4.3, count: 500 },
   gstin: "32**********1ZT",
   parking: "Ample dedicated parking for family shopping trips",
-  note: "Readymade garments only — bespoke tailoring not available",
+  note: "Readymade garments only. Bespoke tailoring not available",
 } as const;
 
 export const CONTACT = {

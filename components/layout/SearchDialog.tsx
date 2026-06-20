@@ -152,7 +152,7 @@ export function SearchDialog({ trigger }: SearchDialogProps) {
 
           {showEmpty && (
             <p className="mt-8 text-center font-display text-base italic text-gold-muted">
-              No matches — try &lsquo;saree&rsquo; or &lsquo;bridal&rsquo;
+              No matches. Try &lsquo;saree&rsquo; or &lsquo;bridal&rsquo;
             </p>
           )}
         </div>

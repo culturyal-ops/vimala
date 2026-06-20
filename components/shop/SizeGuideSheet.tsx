@@ -63,7 +63,7 @@ export function SizeGuideSheet() {
           </table>
         </div>
         <p className="mt-4 font-body text-xs text-ink/45">
-          Need help choosing? Message us on WhatsApp with your measurements — our
+          Need help choosing? Message us on WhatsApp with your measurements. Our
           team will recommend the best fit.
         </p>
       </SheetContent>

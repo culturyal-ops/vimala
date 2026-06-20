@@ -9,7 +9,7 @@ import { enrichProduct, toBagProduct } from "@/lib/product-seo";
 
 export const metadata: Metadata = pageMetadata({
   title:
-    "Buy Silk Sarees Online | Bridal & Wedding Silk Sarees — Vimala Silk House",
+    "Buy Silk Sarees Online | Bridal & Wedding Silk Sarees at Vimala Silk House",
   description:
     "Shop pure silk sarees and bridal wear online from Kerala. Handpicked wedding and festive silk sarees, shipped worldwide from Vimala Silk House.",
   path: "/collections/silk-sarees",

@@ -21,7 +21,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "banarasi-zari-bridal-saree",
     sku: "VSH-SLK-002",
     description:
-      "Banarasi zari weave bridal saree with intricate brocade — a festive and wedding favourite from our Kattappana silk collection.",
+      "Banarasi zari weave bridal saree with intricate brocade. A festive and wedding favourite from our Kattappana silk collection.",
     imageAlt:
       "Banarasi zari bridal silk saree with brocade pattern for wedding wear",
   },
@@ -29,7 +29,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "kerala-kasavu-set-festive",
     sku: "VSH-SLK-003",
     description:
-      "Classic Kerala Kasavu set in cotton silk — ideal for Onam, Vishu, and festive gatherings across Kerala and beyond.",
+      "Classic Kerala Kasavu set in cotton silk. Ideal for Onam, Vishu, and festive gatherings across Kerala and beyond.",
     imageAlt:
       "Kerala Kasavu cotton silk saree set with golden kasavu border for Onam",
   },
@@ -37,7 +37,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "embroidered-georgette-saree-festive",
     sku: "VSH-WOM-004",
     description:
-      "Lightweight embroidered georgette saree for festive evenings — easy to drape, photograph beautifully, and ship worldwide.",
+      "Lightweight embroidered georgette saree for festive evenings. Easy to drape, photograph beautifully, and ship worldwide.",
     imageAlt:
       "Embroidered georgette festive saree in flowing drape for evening wear",
   },
@@ -45,7 +45,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "designer-anarkali-gown-party",
     sku: "VSH-RDY-005",
     description:
-      "Designer Anarkali gown in net and silk — readymade party wear with the finish families expect from Vimala Silk House.",
+      "Designer Anarkali gown in net and silk. Readymade party wear with the finish families expect from Vimala Silk House.",
     imageAlt:
       "Designer Anarkali party wear gown in net and silk readymade outfit",
   },
@@ -53,7 +53,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "printed-cotton-kurti-daily-wear",
     sku: "VSH-RDY-006",
     description:
-      "Everyday printed cotton kurti — dependable readymade daily wear from our Kattappana family fashion floor.",
+      "Everyday printed cotton kurti. Dependable readymade daily wear from our Kattappana family fashion floor.",
     imageAlt:
       "Printed cotton kurti in everyday readymade daily wear style",
   },
@@ -61,7 +61,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "mens-silk-blend-formal-shirt",
     sku: "VSH-MEN-007",
     description:
-      "Men's silk blend formal shirt — smart readymade menswear for functions, office, and festive occasions.",
+      "Men's silk blend formal shirt. Smart readymade menswear for functions, office, and festive occasions.",
     imageAlt:
       "Men's silk blend formal shirt in readymade menswear",
   },
@@ -69,7 +69,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "mens-cotton-dhoti-set-traditional",
     sku: "VSH-MEN-008",
     description:
-      "Traditional men's cotton dhoti set — a staple for temple visits, weddings, and Kerala festive dressing.",
+      "Traditional men's cotton dhoti set. A staple for temple visits, weddings, and Kerala festive dressing.",
     imageAlt:
       "Men's traditional cotton dhoti set for Kerala festive and wedding wear",
   },
@@ -77,7 +77,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "kids-festive-lehenga-silk-blend",
     sku: "VSH-KID-009",
     description:
-      "Kids festive lehenga in silk blend — readymade children's occasion wear for weddings and family celebrations.",
+      "Kids festive lehenga in silk blend. Readymade children's occasion wear for weddings and family celebrations.",
     imageAlt:
       "Kids festive lehenga in silk blend for wedding and celebration wear",
   },
@@ -85,14 +85,14 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "kids-cotton-casual-set",
     sku: "VSH-KID-010",
     description:
-      "Comfortable kids cotton casual set — everyday readymade children's wear from our family fashion department.",
+      "Comfortable kids cotton casual set. Everyday readymade children's wear from our family fashion department.",
     imageAlt: "Kids cotton casual readymade outfit set for daily wear",
   },
   "temple-jewelry-set-gold-plated": {
     slug: "temple-jewelry-set-gold-plated",
     sku: "VSH-ACC-011",
     description:
-      "Temple jewelry set in gold-plated finish — curated to complete bridal and festive silk saree looks.",
+      "Temple jewelry set in gold-plated finish. Curated to complete bridal and festive silk saree looks.",
     imageAlt:
       "Temple jewelry set gold-plated to match Kerala bridal silk saree",
   },
@@ -100,14 +100,14 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "kundan-earrings-bridal",
     sku: "VSH-ACC-012",
     description:
-      "Kundan earrings chosen to complement our silk and readymade lines — finishing touches for wedding and festive outfits.",
+      "Kundan earrings chosen to complement our silk and readymade lines. Finishing touches for wedding and festive outfits.",
     imageAlt: "Kundan bridal earrings to pair with silk saree outfits",
   },
   "linen-summer-saree-kerala": {
     slug: "linen-summer-saree-kerala",
     sku: "VSH-SUM-013",
     description:
-      "Breathable linen summer saree — light Kerala-friendly fabric for warm-weather festive and casual ethnic wear.",
+      "Breathable linen summer saree. Light Kerala-friendly fabric for warm-weather festive and casual ethnic wear.",
     imageAlt:
       "Linen summer saree in light breathable fabric for Kerala heat",
   },
@@ -115,7 +115,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "cotton-churidar-set-summer",
     sku: "VSH-SUM-014",
     description:
-      "Cotton churidar set for summer — readymade comfort wear in standard sizes, ideal for daily ethnic dressing.",
+      "Cotton churidar set for summer. Readymade comfort wear in standard sizes, ideal for daily ethnic dressing.",
     imageAlt:
       "Cotton churidar readymade set for summer daily ethnic wear",
   },
@@ -123,21 +123,21 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "stocklot-mens-cotton-shirt-clearance",
     sku: "VSH-STK-015",
     description:
-      "Value stocklot men's cotton shirt — clearance readymade menswear at an accessible price point.",
+      "Value stocklot men's cotton shirt. Clearance readymade menswear at an accessible price point.",
     imageAlt: "Stocklot men's cotton shirt clearance readymade garment",
   },
   "stocklot-kurti-pack-clearance": {
     slug: "stocklot-kurti-pack-clearance",
     sku: "VSH-STK-016",
     description:
-      "Stocklot kurti pack — bundled readymade value picks from our clearance floor in Kattappana.",
+      "Stocklot kurti pack. Bundled readymade value picks from our clearance floor in Kattappana.",
     imageAlt: "Stocklot kurti pack bundle clearance readymade fashion",
   },
   "chanderi-silk-saree-festive": {
     slug: "chanderi-silk-saree-festive",
     sku: "VSH-SLK-017",
     description:
-      "Chanderi silk saree with a refined festive drape — handpicked for Onam, weddings, and special occasions.",
+      "Chanderi silk saree with a refined festive drape. Handpicked for Onam, weddings, and special occasions.",
     imageAlt:
       "Chanderi silk festive saree with lightweight sheer drape",
   },
@@ -145,7 +145,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "office-wear-salwar-set-crepe",
     sku: "VSH-WOM-018",
     description:
-      "Office wear salwar set in crepe — polished readymade ethnic workwear in standard sizes.",
+      "Office wear salwar set in crepe. Polished readymade ethnic workwear in standard sizes.",
     imageAlt:
       "Office wear crepe salwar kameez readymade set for work",
   },
@@ -153,14 +153,14 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "mens-formal-trouser-poly-wool",
     sku: "VSH-MEN-019",
     description:
-      "Men's formal trouser in poly wool blend — readymade menswear for office and function dressing.",
+      "Men's formal trouser in poly wool blend. Readymade menswear for office and function dressing.",
     imageAlt: "Men's formal poly wool trousers readymade menswear",
   },
   "bridal-silk-lehenga-pure-silk": {
     slug: "bridal-silk-lehenga-pure-silk",
     sku: "VSH-SLK-020",
     description:
-      "Pure silk bridal lehenga — a statement wedding piece from our bridal silk collection, shipped with protective packaging.",
+      "Pure silk bridal lehenga. A statement wedding piece from our bridal silk collection, shipped with protective packaging.",
     imageAlt:
       "Pure silk bridal lehenga in rich colour for Kerala wedding wear",
   },
@@ -168,7 +168,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "ethnic-embroidered-handbag",
     sku: "VSH-ACC-021",
     description:
-      "Ethnic embroidered handbag — lifestyle accessory curated to match sarees and festive readymade outfits.",
+      "Ethnic embroidered handbag. Lifestyle accessory curated to match sarees and festive readymade outfits.",
     imageAlt:
       "Ethnic embroidered handbag accessory for saree and festive outfits",
   },
@@ -176,14 +176,14 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "rayon-palazzo-set-casual",
     sku: "VSH-RDY-022",
     description:
-      "Rayon palazzo readymade set — relaxed casual ethnic wear for everyday family fashion shopping.",
+      "Rayon palazzo readymade set. Relaxed casual ethnic wear for everyday family fashion shopping.",
     imageAlt: "Rayon palazzo readymade casual ethnic outfit set",
   },
   "mysore-silk-saree-premium": {
     slug: "mysore-silk-saree-premium",
     sku: "VSH-SLK-023",
     description:
-      "Premium Mysore silk saree — soft lustre and classic drape from our curated Kerala silk sarees online collection.",
+      "Premium Mysore silk saree. Soft lustre and classic drape from our curated Kerala silk sarees online collection.",
     imageAlt:
       "Mysore silk premium saree with soft lustre for festive occasions",
   },
@@ -191,7 +191,7 @@ export const PRODUCT_SEO: Record<string, ProductSeo> = {
     slug: "kids-school-uniform-cotton-set",
     sku: "VSH-KID-024",
     description:
-      "Kids cotton school uniform set — durable readymade children's daily wear in standard age sizes.",
+      "Kids cotton school uniform set. Durable readymade children's daily wear in standard age sizes.",
     imageAlt:
       "Kids cotton school uniform readymade set in standard sizes",
   },

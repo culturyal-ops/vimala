@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = await getCatalogProductBySlug(params.slug);
   if (!product) return {};
   return pageMetadata({
-    title: `${product.name} | Buy Online — Vimala Silk House`,
+    title: `${product.name} | Buy Online at Vimala Silk House`,
     description: product.description,
     path: `/shop/${product.slug}`,
   });
