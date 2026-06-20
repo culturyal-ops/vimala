@@ -41,14 +41,29 @@ Copy env vars from **[vercel.env](./vercel.env)** (your local file with real key
 1. Vercel → your project → **Settings** → **Environment Variables**
 2. Click **Bulk Edit** (or paste one-by-one)
 3. Copy the entire contents of [vercel.env](./vercel.env) and paste
-4. Apply to **Production**, **Preview**, and **Development**
-5. Redeploy
+4. Set `NEXT_PUBLIC_SITE_URL` to your live URL (e.g. `https://vimalasilkhouse.vercel.app`) — **not** `localhost`
+5. Apply to **Production**, **Preview**, and **Development**
+6. Redeploy
 
 Template (no secrets): [vercel.env.example](./vercel.env.example)
 
 Local dev keys: [.env.local](./.env.local)
 
 > `SUPABASE_DB_PASSWORD`, `VIMALA_ADMIN_*` are setup-script only — not needed on Vercel.
+
+## Supabase auth URLs (fix localhost redirect after email confirm)
+
+In **Supabase Dashboard → Authentication → URL Configuration**:
+
+| Setting | Value |
+|---------|--------|
+| **Site URL** | `https://vimalasilkhouse.vercel.app` (your Vercel URL or custom domain) |
+| **Redirect URLs** | Add both: |
+| | `https://vimalasilkhouse.vercel.app/**` |
+| | `https://vimalasilkhouse.vercel.app/auth/callback` |
+| | `http://localhost:3000/**` (local dev only) |
+
+Save, then redeploy Vercel after updating env vars.
 
 ## Security
 

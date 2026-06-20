@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createBrowserClient } from "@/lib/supabase/browser";
 import { linkCustomerAccount } from "@/app/account/actions";
+import { getAuthCallbackUrl } from "@/lib/site-url";
 import { Button } from "@/components/ui/button";
 
 export default function SignUpPage() {
@@ -29,6 +30,7 @@ export default function SignUpPage() {
       email: trimmedEmail,
       password,
       options: {
+        emailRedirectTo: getAuthCallbackUrl("/account"),
         data: {
           full_name: fullName.trim(),
           role: "customer",
