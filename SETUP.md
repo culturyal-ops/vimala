@@ -65,6 +65,47 @@ In **Supabase Dashboard → Authentication → URL Configuration**:
 
 Save, then redeploy Vercel after updating env vars.
 
+## Auth: no email + localhost redirect
+
+**SQL does not fix redirects or send emails.** Those are Supabase Dashboard settings.
+
+### Fix localhost redirect (Dashboard — required)
+
+1. [Supabase → Authentication → URL Configuration](https://supabase.com/dashboard/project/iyojbohsiyzeawgphlcy/auth/url-configuration)
+2. **Site URL** → `https://vimalasilkhouse.vercel.app` (replace `http://localhost:3000`)
+3. **Redirect URLs** → add:
+   - `https://vimalasilkhouse.vercel.app/**`
+   - `https://vimalasilkhouse.vercel.app/auth/callback`
+4. Save
+
+Also set **Vercel** env `NEXT_PUBLIC_SITE_URL=https://vimalasilkhouse.vercel.app` and redeploy.
+
+### Fix no confirmation email (pick one)
+
+**Option A — Skip email confirm (fastest for launch)**  
+Supabase → **Authentication → Providers → Email** → turn **OFF** “Confirm email” → Save.  
+Users can sign in immediately after sign-up; no email needed.
+
+**Option B — Keep email confirm**  
+- Check spam / promotions folder  
+- Supabase free tier limits auth emails (~4/hour) — wait or upgrade SMTP  
+- Configure **Authentication → SMTP Settings** (custom domain email) for reliable delivery  
+
+**Option C — Manually confirm a user in SQL**  
+Run [`supabase/10-confirm-user-email.sql`](./supabase/10-confirm-user-email.sql) — change the email address first.
+
+### SQL to run (in order, if not done already)
+
+| File | When to run |
+|------|-------------|
+| [`setup-all.sql`](./supabase/setup-all.sql) | Fresh database only (full schema + seed) |
+| [`09-customer-role.sql`](./supabase/09-customer-role.sql) | **Required** for storefront sign-up (customer role) |
+| [`08-fix-profiles-rls.sql`](./supabase/08-fix-profiles-rls.sql) | Only if VRM/admin shows profile/RLS errors |
+| [`07-confirm-admin.sql`](./supabase/07-confirm-admin.sql) | Only for admin `admin@vimalasilk.com` |
+| [`10-confirm-user-email.sql`](./supabase/10-confirm-user-email.sql) | When a customer didn’t get the confirm email |
+
+Run each file once in **Supabase → SQL Editor → New query → Run**.
+
 ## Security
 
 Rotate Supabase keys in Dashboard if these were shared publicly.
