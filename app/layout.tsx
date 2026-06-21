@@ -8,17 +8,19 @@ import { AppProviders } from "@/components/providers/AppProviders";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
+  preload: true,
 });
 
 const body = Outfit({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
