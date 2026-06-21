@@ -1,97 +1,158 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
-import { Car, Clock, MapPin, Star, Users } from "lucide-react";
-import { STORE, STORE_HIGHLIGHTS, CONTACT } from "@/lib/store-info";
-import { SectionTitle } from "@/components/ui/SectionTitle";
+import { MapPin, Clock } from "lucide-react";
+import { STORE, CONTACT } from "@/lib/store-info";
 import { Button } from "@/components/ui/button";
-import { fadeUp, staggerContainer } from "@/lib/animations";
-
-const icons = [Star, Car, Users, Clock];
 
 export function StoreExperience() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="border-t border-gold/10 bg-ivory section-pad">
-      <motion.div
-        ref={ref}
-        variants={staggerContainer}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        className="page-container"
-      >
-        <SectionTitle
-          title="Visit the House"
-          subtitle="Kattappana's multi-floor boutique. Silks, readymade, and personal service since 1987."
-        />
+    <section ref={ref} className="overflow-hidden">
 
-        <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
-          <motion.div variants={fadeUp} className="space-y-4 lg:col-span-5">
-            <div className="luxury-surface p-6 sm:p-8">
-              <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
-                <div>
-                  <p className="font-display text-lg font-medium text-crimson">
-                    {STORE.address.full}
-                  </p>
-                  <p className="mt-2 font-body text-sm text-ink/55">
-                    {STORE.parking}
-                  </p>
-                </div>
-              </div>
-              <div className="mt-5 flex items-center gap-3 border-t border-gold/15 pt-5">
-                <Clock className="h-5 w-5 text-gold" />
-                <div>
-                  <p className="font-display text-sm font-medium text-crimson">
-                    {STORE.hours.label}
-                  </p>
-                  <p className="font-body text-sm text-ink/55">
-                    {STORE.hours.open} – {STORE.hours.close}
-                  </p>
-                </div>
+      {/* Feature split: image left, text right */}
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        {/* Image side */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="relative aspect-[4/3] md:aspect-auto md:min-h-[600px]"
+        >
+          <Image
+            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900"
+            alt="Inside Vimala Silk House boutique"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          {/* Polaroid-style floating photo — like the Showit reference */}
+          <div className="absolute bottom-6 right-6 hidden rotate-3 bg-ivory p-2 shadow-premium-md md:block">
+            <div className="relative h-28 w-24 overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=300"
+                alt="Silk saree detail"
+                fill
+                className="object-cover"
+                sizes="96px"
+              />
+            </div>
+            <p className="mt-2 text-center font-body text-[8px] uppercase tracking-widest text-stone">
+              Since 1987
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Text side */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="flex flex-col justify-center bg-ivory-cream px-8 py-16 md:px-14 md:py-20 lg:px-20"
+        >
+          <p className="mb-3 font-body text-[9px] uppercase tracking-[0.5em] text-stone">Visit Us</p>
+          <h2 className="mb-6 font-display text-3xl font-light text-ink md:text-4xl lg:text-5xl">
+            Experience it<br />
+            <span className="font-script text-5xl text-crimson md:text-6xl">in person</span>
+          </h2>
+          <p className="mb-8 font-display text-sm font-light leading-loose text-ink/55">
+            Kattappana&apos;s largest fashion destination. Eight departments, hundreds
+            of silks, bridal specialists, and a team that genuinely loves what
+            they do. Come in — we&apos;d love to help.
+          </p>
+
+          <div className="mb-8 space-y-4 border-t border-gold/20 pt-8">
+            <div className="flex items-start gap-3">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+              <div>
+                <p className="font-body text-sm font-medium text-ink">{STORE.address.full}</p>
+                <p className="font-body text-xs text-stone">{STORE.parking}</p>
               </div>
             </div>
-
-            <div className="glass-panel rounded-3xl p-5 sm:p-6">
-              <p className="font-display text-base text-crimson">Personal Stylist</p>
-              <p className="mt-2 font-body text-sm text-ink/55">
-                Share your occasion and budget. We&apos;ll curate silks and readymade
-                picks on WhatsApp before you visit or order.
+            <div className="flex items-center gap-3">
+              <Clock className="h-4 w-4 shrink-0 text-gold" />
+              <p className="font-body text-sm text-ink">
+                Open daily · {STORE.hours.open} – {STORE.hours.close}
               </p>
-              <Button variant="gold" asChild className="mt-4 w-full sm:w-auto">
-                <Link href={CONTACT.whatsappUrl} target="_blank">
-                  Chat on WhatsApp
-                </Link>
-              </Button>
             </div>
+          </div>
 
-            <Button asChild variant="ghost">
-              <Link href="/about">Our Story →</Link>
+          <div className="flex flex-wrap gap-4">
+            <Button asChild className="btn-primary px-7 py-3 text-[10px] uppercase tracking-[0.2em]">
+              <Link href={CONTACT.whatsappUrl} target="_blank">
+                Chat on WhatsApp
+              </Link>
             </Button>
-          </motion.div>
+            <Button variant="ghost" asChild className="border border-gold/30 px-7 py-3 text-[10px] uppercase tracking-[0.2em] hover:border-crimson hover:text-crimson">
+              <Link href="/about">Our Story</Link>
+            </Button>
+          </div>
+        </motion.div>
+      </div>
 
-          <motion.div variants={fadeUp} className="grid grid-cols-2 gap-3 sm:gap-4 lg:col-span-7">
-            {STORE_HIGHLIGHTS.map((item, i) => {
-              const Icon = icons[i];
-              return (
-                <div key={item.title} className="luxury-card rounded-3xl p-5 sm:p-6">
-                  <Icon className="mb-3 h-5 w-5 text-gold" strokeWidth={1.25} />
-                  <h3 className="font-display text-base font-medium text-crimson">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1.5 font-body text-xs leading-relaxed text-ink/55 sm:text-sm">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
-          </motion.div>
+      {/* Full-bleed crimson CTA — like the big red "Elevating Ideas" from the reference */}
+      <div className="relative overflow-hidden bg-crimson py-20 md:py-28">
+        <div className="damask-pattern pointer-events-none absolute inset-0 opacity-10" />
+        {/* Decorative polaroid images floating at sides */}
+        <div className="pointer-events-none absolute -left-4 top-1/2 hidden -translate-y-1/2 -rotate-6 bg-ivory p-2 shadow-premium-lg md:block">
+          <div className="relative h-40 w-32 overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=300"
+              alt="Bridal moment"
+              fill
+              className="object-cover grayscale"
+              sizes="128px"
+            />
+          </div>
         </div>
-      </motion.div>
+        <div className="pointer-events-none absolute -right-4 top-1/2 hidden -translate-y-1/2 rotate-6 bg-ivory p-2 shadow-premium-lg md:block">
+          <div className="relative h-40 w-32 overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=300"
+              alt="Festival saree"
+              fill
+              className="object-cover grayscale"
+              sizes="128px"
+            />
+          </div>
+        </div>
+
+        <div className="relative page-container text-center">
+          <p className="mb-4 font-body text-[9px] uppercase tracking-[0.5em] text-gold/60">
+            [ Worldwide Shipping Available ]
+          </p>
+          <h2 className="font-display text-3xl font-light text-ivory md:text-5xl lg:text-6xl">
+            Can&apos;t Visit?
+            <br />
+            <span className="font-script text-5xl md:text-7xl">We Come to You</span>
+          </h2>
+          <p className="mx-auto mt-6 max-w-md font-display text-sm font-light italic text-ivory/55">
+            Share your occasion, size, and budget on WhatsApp. We&apos;ll curate
+            a personal selection and ship it anywhere in the world.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link
+              href={CONTACT.whatsappUrl}
+              target="_blank"
+              className="inline-flex items-center gap-3 border border-gold/50 bg-gold/10 px-8 py-4 font-body text-[10px] uppercase tracking-[0.25em] text-ivory backdrop-blur-sm transition-all duration-300 hover:bg-gold hover:text-ink"
+            >
+              WhatsApp Us Now
+            </Link>
+            <Link
+              href="/shipping"
+              className="inline-flex items-center gap-3 border border-ivory/20 px-8 py-4 font-body text-[10px] uppercase tracking-[0.25em] text-ivory/70 transition-all duration-300 hover:border-ivory/50 hover:text-ivory"
+            >
+              Shipping Info
+            </Link>
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 }

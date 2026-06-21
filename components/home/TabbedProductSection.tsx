@@ -31,7 +31,7 @@ export function TabbedProductSection({ catalog }: TabbedProductSectionProps) {
         <div className="mb-8 flex items-end justify-between border-b border-gold/20 pb-5">
           <div>
             <p className="mb-2 font-body text-[9px] uppercase tracking-[0.5em] text-stone">Curated Edit</p>
-            <h2 className="font-script text-4xl text-ink md:text-5xl">Shop the Selection</h2>
+            <h2 className="font-display text-3xl font-light text-ink md:text-4xl">Shop the <em className="font-script not-italic text-crimson">Selection</em></h2>
           </div>
           <Link
             href="/shop"

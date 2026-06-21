@@ -66,9 +66,14 @@ export function EditorialHero() {
                     <p className="mb-4 font-body text-[9px] uppercase tracking-[0.5em] text-gold/80 md:text-[10px]">
                       Est. 1987 · Kattappana, Kerala
                     </p>
-                    {/* Script headline like "Atmosphere" in the reference */}
-                    <h1 className="font-script text-6xl leading-none text-ivory drop-shadow-lg md:text-8xl lg:text-[7rem]">
-                      {slide.title}
+                    {/* Mixed heading: display for most words, script for the emotional word */}
+                    <h1 className="leading-none text-ivory drop-shadow-lg">
+                      <span className="block font-display text-4xl font-light uppercase tracking-[0.15em] md:text-5xl lg:text-6xl">
+                        Pure Silk,
+                      </span>
+                      <span className="font-script text-7xl md:text-9xl lg:text-[9rem]">
+                        {slide.title.split(" ").slice(-2).join(" ")}
+                      </span>
                     </h1>
                     <p className="mt-4 font-display text-sm font-light italic text-ivory/75 md:text-base lg:max-w-xl">
                       {slide.subtitle}

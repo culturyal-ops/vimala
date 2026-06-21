@@ -131,13 +131,15 @@ export function CustomerVideoReel() {
   };
 
   return (
-    <section className="border-t border-border bg-canvas section-pad" aria-label="Loved across Kerala">
+    <section className="border-t border-gold/20 bg-canvas section-pad" aria-label="Loved across Kerala">
       <div className="page-container">
         <div className="mb-8 flex flex-col gap-3 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="label-caps mb-2">From Our Customers</p>
-            <h2 className="font-display text-display-md text-ink">Loved Across Kerala</h2>
-            <p className="mt-2 max-w-lg font-body text-sm text-stone">
+            <p className="mb-2 font-body text-[9px] uppercase tracking-[0.5em] text-stone">From Our Customers</p>
+            <h2 className="font-display text-3xl font-light text-ink md:text-4xl">
+              Loved Across <em className="font-script not-italic text-5xl text-crimson md:text-6xl">Kerala</em>
+            </h2>
+            <p className="mt-3 max-w-lg font-display text-sm font-light italic text-stone">
               Real drapes, real celebrations. Scroll through moments from weddings,
               festivals, and family visits to Vimala Silk House.
             </p>

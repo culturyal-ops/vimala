@@ -12,6 +12,7 @@ import { HorizontalDiscoveryRow } from "@/components/home/HorizontalDiscoveryRow
 import { StoreExperience } from "@/components/home/StoreExperience";
 import { RecentlyViewedRow } from "@/components/shop/RecentlyViewedRow";
 import { CustomerVideoReel } from "@/components/home/CustomerVideoReel";
+import { Testimonials } from "@/components/home/Testimonials";
 import { NewsletterBanner } from "@/components/home/NewsletterBanner";
 
 export const metadata: Metadata = pageMetadata({
@@ -37,6 +38,7 @@ export default async function HomePage() {
       <StoreExperience />
       <RecentlyViewedRow />
       <CustomerVideoReel />
+      <Testimonials />
       <NewsletterBanner />
     </>
   );

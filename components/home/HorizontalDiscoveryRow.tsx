@@ -9,7 +9,7 @@ export function HorizontalDiscoveryRow() {
         <div className="mb-8 flex items-end justify-between">
           <div>
             <p className="mb-2 font-body text-[9px] uppercase tracking-[0.5em] text-stone">Departments</p>
-            <h2 className="font-script text-4xl text-ink md:text-5xl">The Whole Family</h2>
+            <h2 className="font-display text-3xl font-light text-ink md:text-4xl">The Whole <em className="font-script not-italic text-crimson">Family</em></h2>
           </div>
           <Link
             href="/shop"
