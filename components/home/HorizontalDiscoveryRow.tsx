@@ -8,8 +8,8 @@ export function HorizontalDiscoveryRow() {
       <div className="page-container pt-12 sm:pt-16">
         <div className="mb-8 flex items-end justify-between">
           <div>
-            <p className="label-caps mb-2">Departments</p>
-            <h2 className="font-display text-display-md text-ink">The Whole Family</h2>
+            <p className="mb-2 font-body text-[9px] uppercase tracking-[0.5em] text-stone">Departments</p>
+            <h2 className="font-script text-4xl text-ink md:text-5xl">The Whole Family</h2>
           </div>
           <Link
             href="/shop"

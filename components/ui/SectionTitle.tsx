@@ -28,7 +28,8 @@ export function SectionTitle({
       <div>
         <h2
           className={cn(
-            "font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tight",
+            "font-script leading-none",
+            "text-5xl md:text-6xl lg:text-7xl",
             isDark ? "text-white" : "text-ink"
           )}
         >

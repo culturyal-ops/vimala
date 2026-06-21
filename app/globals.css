@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --canvas: 38 33% 99%;
-    --surface: 30 17% 97%;
+    --canvas: 36 38% 95%;
+    --surface: 34 28% 92%;
     --foreground: 20 18% 9%;
-    --card: 0 0% 100%;
+    --card: 36 40% 97%;
     --card-foreground: 20 18% 9%;
-    --popover: 0 0% 100%;
+    --popover: 36 40% 97%;
     --popover-foreground: 20 18% 9%;
-    --primary: 345 77% 32%;
-    --primary-foreground: 38 33% 99%;
-    --secondary: 30 11% 96%;
+    --primary: 349 73% 28%;
+    --primary-foreground: 36 38% 95%;
+    --secondary: 34 20% 90%;
     --secondary-foreground: 20 18% 9%;
-    --muted: 30 11% 95%;
+    --muted: 34 18% 88%;
     --muted-foreground: 30 8% 45%;
-    --accent: 38 35% 60%;
+    --accent: 36 42% 61%;
     --accent-foreground: 20 18% 9%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 30 11% 91%;
-    --input: 30 11% 91%;
-    --ring: 345 77% 32%;
+    --border: 33 18% 85%;
+    --input: 33 18% 85%;
+    --ring: 349 73% 28%;
     --header-height: 7rem;
     --bottom-nav-height: 4.25rem;
     --promo-height: 2.5rem;
@@ -44,6 +44,7 @@
   
   body {
     @apply bg-canvas text-ink font-body antialiased;
+    background-color: #F8F4EE;
     padding-bottom: env(safe-area-inset-bottom);
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
     -webkit-font-smoothing: antialiased;
@@ -95,7 +96,7 @@
 }
 
 ::selection {
-  background: rgba(139, 30, 63, 0.2);
+  background: rgba(122, 21, 37, 0.2);
   color: #1A1614;
 }
 
@@ -155,7 +156,11 @@ html {
 }
 
 .crimson-gradient {
-  background: linear-gradient(135deg, #A53454 0%, #8B1E3F 50%, #6B1731 100%);
+  background: linear-gradient(135deg, #92293A 0%, #7A1525 50%, #5C0F1B 100%);
+}
+
+.font-script {
+  font-family: var(--font-script), 'Great Vibes', cursive;
 }
 
 .shimmer-effect {

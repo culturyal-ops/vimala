@@ -19,7 +19,7 @@ export function Footer() {
         <div className="mx-auto max-w-[1440px] px-4 py-12 md:px-16 md:py-20">
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div>
-              <h3 className="mb-4 font-display text-xl tracking-widest text-ivory">
+              <h3 className="mb-4 font-script text-3xl text-ivory">
                 Vimala Silk House
               </h3>
               <p className="font-body text-sm leading-relaxed">

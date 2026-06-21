@@ -16,8 +16,9 @@ export function NewsletterBanner() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-ink">
-      <div className="damask-pattern pointer-events-none absolute inset-0 opacity-10" />
+    <section className="relative overflow-hidden bg-crimson-deep">
+      <div className="damask-pattern pointer-events-none absolute inset-0 opacity-15" />
+      <div className="paisley-pattern pointer-events-none absolute inset-0 opacity-10" />
       <motion.div
         ref={ref}
         variants={fadeUp}
@@ -25,10 +26,14 @@ export function NewsletterBanner() {
         animate={isInView ? "visible" : "hidden"}
         className="relative mx-auto max-w-[1440px] px-4 py-16 text-center md:px-16 md:py-24"
       >
-        <h2 className="mb-4 font-display text-3xl uppercase tracking-[0.15em] text-ivory md:text-4xl">
+        <p className="mb-4 font-body text-[9px] uppercase tracking-[0.5em] text-gold/60">
+          Stay Connected
+        </p>
+        <h2 className="mb-2 font-script text-5xl text-ivory md:text-6xl">
           Be the First to Know
         </h2>
-        <p className="mx-auto mb-8 max-w-lg font-body text-base text-ivory/60">
+        <div className="mx-auto mb-8 mt-4 h-[1px] w-16 bg-gold/40" />
+        <p className="mx-auto mb-8 max-w-lg font-display text-sm font-light italic text-ivory/55">
           New arrivals, bridal collections, and exclusive offers straight to
           your inbox.
         </p>

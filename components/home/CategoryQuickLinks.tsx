@@ -4,9 +4,9 @@ import { QUICK_LINKS } from "@/lib/navigation";
 
 export function CategoryQuickLinks() {
   return (
-    <section className="border-b border-border bg-canvas py-8 md:py-10">
+    <section className="border-b border-gold/20 bg-ivory-cream py-8 md:py-10">
       <div className="page-container">
-        <p className="label-caps mb-5">Shop by Category</p>
+        <p className="mb-5 font-body text-[9px] uppercase tracking-[0.5em] text-stone">Shop by Category</p>
         <div className="flex gap-6 overflow-x-auto pb-1 scrollbar-none">
           {QUICK_LINKS.map((item) => (
             <Link

@@ -26,31 +26,31 @@ export function TabbedProductSection({ catalog }: TabbedProductSectionProps) {
   );
 
   return (
-    <section className="border-t border-border bg-canvas section-pad">
+    <section className="border-t border-gold/20 bg-canvas section-pad">
       <div className="page-container">
-        <div className="mb-8 flex items-end justify-between border-b border-border pb-4">
+        <div className="mb-8 flex items-end justify-between border-b border-gold/20 pb-5">
           <div>
-            <p className="label-caps mb-2">Curated Edit</p>
-            <h2 className="font-display text-display-md text-ink">Shop the Selection</h2>
+            <p className="mb-2 font-body text-[9px] uppercase tracking-[0.5em] text-stone">Curated Edit</p>
+            <h2 className="font-script text-4xl text-ink md:text-5xl">Shop the Selection</h2>
           </div>
           <Link
             href="/shop"
-            className="hidden font-body text-[10px] font-medium uppercase tracking-widest text-ink-muted hover:text-crimson sm:inline"
+            className="hidden font-body text-[9px] font-medium uppercase tracking-[0.25em] text-ink-muted hover:text-crimson sm:inline"
           >
             View all →
           </Link>
         </div>
 
-        <div className="mb-8 flex gap-6 overflow-x-auto border-b border-border pb-px scrollbar-none">
+        <div className="mb-8 flex gap-7 overflow-x-auto border-b border-gold/20 pb-px scrollbar-none">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               type="button"
               onClick={() => setActiveTab(tab.id)}
               className={cn(
-                "shrink-0 border-b-2 pb-3 font-body text-[11px] font-medium uppercase tracking-widest transition-colors",
+                "shrink-0 border-b-2 pb-3 font-body text-[10px] font-medium uppercase tracking-[0.2em] transition-colors",
                 activeTab === tab.id
-                  ? "border-ink text-ink"
+                  ? "border-crimson text-crimson"
                   : "border-transparent text-stone hover:text-ink"
               )}
             >

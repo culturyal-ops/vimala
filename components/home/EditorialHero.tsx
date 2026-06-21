@@ -56,30 +56,34 @@ export function EditorialHero() {
                   priority={index === 0}
                   sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/5 to-ink/40" />
+                {/* Deep crimson overlay gradient like the reference */}
+                <div className="absolute inset-0 bg-gradient-to-b from-crimson-deep/30 via-crimson/20 to-ink/70" />
+                {/* Subtle damask texture overlay */}
+                <div className="damask-pattern pointer-events-none absolute inset-0 opacity-20" />
 
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center px-4 max-w-5xl">
-                    <p className="label-caps mb-8 text-canvas/80">
+                <div className="absolute inset-0 flex items-end justify-start pb-12 md:pb-16 lg:pb-20">
+                  <div className="page-container max-w-4xl">
+                    <p className="mb-4 font-body text-[9px] uppercase tracking-[0.5em] text-gold/80 md:text-[10px]">
                       Est. 1987 · Kattappana, Kerala
                     </p>
-                    <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-light text-canvas tracking-tight leading-[0.95] mb-6">
+                    {/* Script headline like "Atmosphere" in the reference */}
+                    <h1 className="font-script text-6xl leading-none text-ivory drop-shadow-lg md:text-8xl lg:text-[7rem]">
                       {slide.title}
                     </h1>
-                    <p className="font-body text-base md:text-lg font-light text-canvas/90 max-w-2xl mx-auto mb-10">
+                    <p className="mt-4 font-display text-sm font-light italic text-ivory/75 md:text-base lg:max-w-xl">
                       {slide.subtitle}
                     </p>
-                    <div className="flex flex-wrap gap-4 justify-center">
-                      <Link 
+                    <div className="mt-8 flex flex-wrap gap-4">
+                      <Link
                         href={slide.href}
-                        className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-ink font-body text-sm uppercase tracking-widest transition-all duration-300 hover:bg-ink hover:text-white"
+                        className="group inline-flex items-center gap-3 border border-gold/60 bg-gold/10 px-7 py-3.5 font-body text-[11px] uppercase tracking-[0.2em] text-ivory backdrop-blur-sm transition-all duration-300 hover:bg-gold hover:text-ink"
                       >
                         {slide.cta}
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                       </Link>
                       <Link
                         href="/lookbook/bridal"
-                        className="inline-flex items-center gap-3 px-8 py-4 border border-canvas/40 text-canvas font-body text-sm uppercase tracking-widest transition-all duration-300 hover:bg-canvas/10 backdrop-blur-sm"
+                        className="inline-flex items-center gap-3 border border-ivory/25 px-7 py-3.5 font-body text-[11px] uppercase tracking-[0.2em] text-ivory/70 transition-all duration-300 hover:border-ivory/60 hover:text-ivory"
                       >
                         Lookbook
                       </Link>
@@ -92,7 +96,8 @@ export function EditorialHero() {
         </CarouselContent>
       </Carousel>
 
-      <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-3">
+      {/* Slide indicators */}
+      <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2">
         {HERO_SLIDES.map((slide, index) => (
           <button
             key={slide.title}
@@ -100,8 +105,8 @@ export function EditorialHero() {
             aria-label={`Go to slide ${index + 1}`}
             onClick={() => scrollTo(index)}
             className={cn(
-              "h-[2px] transition-all duration-500 rounded-full",
-              active === index ? "w-12 bg-white" : "w-6 bg-white/40"
+              "h-[1.5px] transition-all duration-500",
+              active === index ? "w-10 bg-gold" : "w-5 bg-ivory/30"
             )}
           />
         ))}

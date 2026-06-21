@@ -7,7 +7,7 @@ const icons = [Truck, ShieldCheck, RotateCcw, Star];
 export function TrustStrip() {
   return (
     <section
-      className="border-b border-border bg-surface"
+      className="border-b border-gold/20 bg-ivory-cream"
       aria-label="Store guarantees"
     >
       <div className="page-container py-3">

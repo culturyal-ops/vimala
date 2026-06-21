@@ -11,38 +11,38 @@ const config: Config = {
     extend: {
       colors: {
         canvas: {
-          DEFAULT: "#FDFCFB",
-          warm: "#FAF9F7",
-          cream: "#F9F7F4",
+          DEFAULT: "#F8F4EE",
+          warm: "#F4EFE6",
+          cream: "#EDE8DE",
         },
         surface: {
-          DEFAULT: "#F7F5F2",
-          muted: "#F0EEEB",
-          elevated: "#FFFFFF",
+          DEFAULT: "#F2EDE3",
+          muted: "#E8E2D6",
+          elevated: "#FDFAF5",
         },
         burgundy: {
-          DEFAULT: "#7A1E3C",
-          rich: "#641832",
-          soft: "#8B3349",
+          DEFAULT: "#6B1525",
+          rich: "#56101D",
+          soft: "#7D2133",
         },
         crimson: {
-          DEFAULT: "#8B1E3F",
-          light: "#A53454",
-          dark: "#6B1731",
-          deep: "#4A0D1F",
+          DEFAULT: "#7A1525",
+          light: "#92293A",
+          dark: "#5C0F1B",
+          deep: "#3D0812",
         },
         gold: {
-          DEFAULT: "#C9A96E",
-          light: "#D9B97E",
-          muted: "#B89860",
-          pale: "#EBE1D1",
-          shimmer: "#E5D4B5",
+          DEFAULT: "#C8A96E",
+          light: "#D9BC85",
+          muted: "#B0925A",
+          pale: "#E8DEC8",
+          shimmer: "#E0D0AA",
         },
         ivory: {
-          DEFAULT: "#FFFEFB",
-          warm: "#FAF9F6",
-          dark: "#F0EFED",
-          cream: "#F5F3EF",
+          DEFAULT: "#FBF8F1",
+          warm: "#F5F0E4",
+          dark: "#EAE4D8",
+          cream: "#F0EAD8",
         },
         ink: {
           DEFAULT: "#1A1614",
@@ -100,6 +100,7 @@ const config: Config = {
         display: ["var(--font-display)", "Cormorant Garamond", "Playfair Display", "Georgia", "serif"],
         body: ["var(--font-body)", "Outfit", "Inter", "system-ui", "sans-serif"],
         serif: ["var(--font-display)", "Georgia", "serif"],
+        script: ["var(--font-script)", "Great Vibes", "cursive"],
       },
       fontSize: {
         // Display sizes for hero and major headings

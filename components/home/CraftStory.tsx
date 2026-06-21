@@ -43,15 +43,17 @@ export function CraftStory() {
           className="flex w-full flex-col justify-center px-4 py-16 md:w-1/2 md:px-16 md:py-24"
         >
           <OrnamentalDivider color="ivory" className="mb-6 justify-start" />
-          <p className="mb-3 font-body text-[10px] uppercase tracking-[0.4em] text-gold-muted">
+          <p className="mb-3 font-body text-[9px] uppercase tracking-[0.5em] text-gold/70">
             Our Heritage
           </p>
-          <h2 className="mb-6 font-display text-3xl font-medium uppercase leading-tight tracking-wide text-ivory md:text-4xl">
+          {/* Script heading like the reference designs */}
+          <h2 className="mb-2 font-script text-5xl text-ivory md:text-6xl">
             Woven with Tradition.
-            <br />
-            Crafted with Care.
           </h2>
-          <p className="mb-8 max-w-md font-body text-sm text-ivory/60">
+          <h3 className="mb-6 font-display text-lg font-light uppercase tracking-[0.2em] text-ivory/60 md:text-xl">
+            Crafted with Care.
+          </h3>
+          <p className="mb-8 max-w-md font-display text-base font-light italic text-ivory/55">
             Kattappana&apos;s fashion destination since 1987.
           </p>
 

@@ -147,10 +147,10 @@ export function Navbar() {
             href="/"
             className="absolute left-1/2 -translate-x-1/2 text-center"
           >
-            <span className="font-display text-xl tracking-[0.28em] text-ink sm:text-2xl">
-              VIMALA
+            <span className="font-script text-2xl text-ink sm:text-3xl">
+              Vimala
             </span>
-            <span className="block font-body text-[8px] font-medium uppercase tracking-[0.55em] text-stone sm:text-[9px]">
+            <span className="block font-body text-[7px] font-medium uppercase tracking-[0.55em] text-stone sm:text-[8px]">
               Silk House
             </span>
           </Link>
