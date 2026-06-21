@@ -55,7 +55,7 @@ export function CatalogProductCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="relative aspect-[3/4] overflow-hidden bg-surface-muted">
+      <div className="relative aspect-[3/4] overflow-hidden bg-parchment-deep">
         <Link href={href} className="absolute inset-0 z-[1]" aria-label={`View ${name}`}>
           <Image
             src={imageUrl}
@@ -84,12 +84,12 @@ export function CatalogProductCard({
         {(isNew || scarcityNote) && (
           <div className="absolute left-0 top-0 z-[2] flex flex-col gap-1 p-2">
             {isNew && (
-              <span className="bg-ink px-2 py-1 font-body text-[9px] font-medium uppercase tracking-widest text-canvas">
+              <span className="bg-ink px-2.5 py-1 font-body text-[8px] font-medium uppercase tracking-[0.2em] text-parchment">
                 New
               </span>
             )}
             {scarcityNote && (
-              <span className="bg-crimson px-2 py-1 font-body text-[9px] uppercase tracking-wide text-canvas">
+              <span className="bg-rouge px-2.5 py-1 font-body text-[8px] uppercase tracking-[0.15em] text-parchment">
                 {scarcityNote}
               </span>
             )}
@@ -105,10 +105,10 @@ export function CatalogProductCard({
                 toggleWishlistSlug(wishKey);
                 setWishlisted(getWishlistSlugs().includes(wishKey));
               }}
-              className="flex h-9 w-9 items-center justify-center bg-canvas/95 text-ink transition-colors hover:text-crimson"
+              className="flex h-8 w-8 items-center justify-center bg-parchment text-ink transition-colors hover:text-rouge"
               aria-label={wishlisted ? "Remove from wishlist" : "Save to wishlist"}
             >
-              <Heart className={cn("h-3.5 w-3.5", wishlisted && "fill-crimson text-crimson")} />
+              <Heart className={cn("h-3.5 w-3.5", wishlisted && "fill-rouge text-rouge")} />
             </button>
           )}
           {bagProduct && (
@@ -118,7 +118,7 @@ export function CatalogProductCard({
                 e.preventDefault();
                 addToBag(bagProduct);
               }}
-              className="flex h-9 w-9 items-center justify-center bg-ink text-canvas transition-colors hover:bg-crimson"
+              className="flex h-8 w-8 items-center justify-center bg-ink text-parchment transition-colors hover:bg-rouge"
               aria-label={`Add ${name} to bag`}
             >
               <ShoppingBag className="h-3.5 w-3.5" />
@@ -127,24 +127,24 @@ export function CatalogProductCard({
         </div>
       </div>
 
-      <div className="mt-3 min-w-0 space-y-1">
-        <p className="truncate font-body text-[10px] font-medium uppercase tracking-[0.18em] text-stone">
+      <div className="mt-4 min-w-0 space-y-1.5">
+        <p className="truncate font-body text-[8px] font-medium uppercase tracking-[0.22em] text-stone">
           {label}
         </p>
         <Link
           href={href}
-          className="line-clamp-2 font-body text-sm font-normal leading-snug text-ink transition-colors hover:text-crimson"
+          className="line-clamp-2 font-display text-base font-light leading-snug text-ink transition-colors hover:text-rouge"
         >
           {name}
         </Link>
         <div className="flex flex-wrap items-baseline gap-2 pt-0.5">
-          <span className="font-body text-sm font-medium text-ink">{formatPrice(price)}</span>
+          <span className="font-body text-sm text-ink">{formatPrice(price)}</span>
           {originalPrice !== undefined && originalPrice > price && (
             <>
               <span className="font-body text-xs text-stone line-through">
                 {formatPrice(originalPrice)}
               </span>
-              <span className="font-body text-[10px] font-medium uppercase tracking-wide text-crimson">
+              <span className="font-body text-[9px] uppercase tracking-wide text-rouge">
                 Save {formatPrice(originalPrice - price)}
               </span>
             </>

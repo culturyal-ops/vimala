@@ -9,7 +9,7 @@ export function PromoTicker() {
 
   return (
     <div
-      className="relative overflow-hidden border-b border-border bg-ink py-2.5"
+      className="relative overflow-hidden border-b border-antique/20 bg-ink/95 py-2.5"
       aria-label="Store offers"
     >
       <div className="animate-marquee flex w-max items-center gap-12 whitespace-nowrap">

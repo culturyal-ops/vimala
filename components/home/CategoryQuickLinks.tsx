@@ -4,26 +4,29 @@ import { QUICK_LINKS } from "@/lib/navigation";
 
 export function CategoryQuickLinks() {
   return (
-    <section className="border-b border-gold/20 bg-ivory-cream py-8 md:py-10">
+    <section className="border-b border-antique/20 bg-parchment py-10 md:py-12">
       <div className="page-container">
-        <p className="mb-5 font-body text-[9px] uppercase tracking-[0.5em] text-stone">Shop by Category</p>
-        <div className="flex gap-6 overflow-x-auto pb-1 scrollbar-none">
+        <p className="editorial-label mb-6">Shop by Category</p>
+        <div className="flex gap-5 overflow-x-auto pb-1 scrollbar-none md:gap-8">
           {QUICK_LINKS.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="group flex w-[4.5rem] shrink-0 flex-col items-center gap-2 sm:w-[5rem]"
+              className="group flex w-[4rem] shrink-0 flex-col items-center gap-2.5 sm:w-[4.5rem]"
             >
-              <div className="relative h-[4.5rem] w-[4.5rem] overflow-hidden bg-surface-muted sm:h-20 sm:w-20">
+              {/* Square image — fashion editorial, not circle */}
+              <div className="relative h-[4rem] w-[4rem] overflow-hidden bg-parchment-deep sm:h-[4.5rem] sm:w-[4.5rem]">
                 <Image
                   src={item.imageUrl}
                   alt={item.label}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="80px"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="72px"
                 />
+                {/* Thin inner border on hover */}
+                <div className="absolute inset-[3px] border border-antique/0 transition-all duration-300 group-hover:border-antique/40 z-10" />
               </div>
-              <span className="text-center font-body text-[10px] font-medium uppercase tracking-wide text-ink group-hover:text-crimson">
+              <span className="text-center font-body text-[9px] uppercase tracking-[0.18em] text-stone transition-colors group-hover:text-rouge">
                 {item.label}
               </span>
             </Link>

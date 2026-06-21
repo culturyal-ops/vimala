@@ -4,44 +4,54 @@ import { DEPARTMENTS } from "@/lib/catalog";
 
 export function HorizontalDiscoveryRow() {
   return (
-    <section className="border-t border-border bg-canvas pb-12 sm:pb-16">
-      <div className="page-container pt-12 sm:pt-16">
-        <div className="mb-8 flex items-end justify-between">
+    <section className="border-t border-antique/20 bg-parchment-warm pb-16 md:pb-20">
+      <div className="page-container pt-16 md:pt-20">
+
+        <div className="mb-10 flex items-end justify-between">
           <div>
-            <p className="mb-2 font-body text-[9px] uppercase tracking-[0.5em] text-stone">Departments</p>
-            <h2 className="font-display text-3xl font-light text-ink md:text-4xl">The Whole <em className="font-script not-italic text-crimson">Family</em></h2>
+            <p className="editorial-label mb-3">Departments</p>
+            <h2 className="font-display text-4xl font-light leading-none text-ink md:text-5xl lg:text-[3.75rem]">
+              The Whole{" "}
+              <em className="font-script not-italic text-rouge" style={{ fontSize: "1.05em" }}>Family</em>
+            </h2>
           </div>
           <Link
             href="/shop"
-            className="font-body text-[10px] font-medium uppercase tracking-widest text-ink-muted hover:text-crimson"
+            className="self-end pb-2 font-body text-[9px] uppercase tracking-[0.25em] text-stone transition-colors hover:text-rouge"
           >
-            View all →
+            View All →
           </Link>
         </div>
-        <div className="flex gap-3 overflow-x-auto pb-1 scrollbar-none md:gap-4">
+
+        {/* Departments — tall portrait cards, no rounded corners */}
+        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none md:gap-4">
           {DEPARTMENTS.map((dept) => (
             <Link
               key={dept.id}
               href={`/shop/category/${dept.id}`}
-              className="group w-[8.5rem] shrink-0 sm:w-40"
+              className="group w-[9rem] shrink-0 sm:w-44"
             >
-              <div className="relative aspect-[3/4] overflow-hidden bg-surface-muted">
+              <div className="relative aspect-[3/4] overflow-hidden bg-parchment-deep">
                 <Image
                   src={dept.imageUrl}
                   alt={dept.label}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="160px"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="176px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3">
-                  <p className="font-display text-base text-canvas">{dept.label}</p>
-                  <p className="font-body text-[10px] text-canvas/60">{dept.count}</p>
+                {/* Dark overlay — text always legible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/15 to-transparent" />
+                {/* Hover: thin antique border inside */}
+                <div className="absolute inset-[6px] border border-antique/0 transition-all duration-500 group-hover:border-antique/30 z-10" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <p className="font-display text-base font-light text-parchment leading-tight">{dept.label}</p>
+                  <p className="mt-0.5 font-body text-[8px] uppercase tracking-[0.15em] text-parchment/50">{dept.count}</p>
                 </div>
               </div>
             </Link>
           ))}
         </div>
+
       </div>
     </section>
   );

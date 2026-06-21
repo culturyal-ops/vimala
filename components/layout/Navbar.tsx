@@ -71,7 +71,7 @@ export function Navbar() {
 
       <div
         className={cn(
-          "border-b border-border bg-canvas transition-shadow duration-300",
+          "border-b border-slate/60 bg-parchment transition-shadow duration-300",
           scrolled && "shadow-premium-sm"
         )}
       >
@@ -98,7 +98,7 @@ export function Navbar() {
                   <Menu className="h-5 w-5" />
                 </button>
               </SheetTrigger>
-              <SheetContent side="left" className="flat-panel w-[85%] border-border bg-canvas sm:max-w-sm">
+              <SheetContent side="left" className="w-[85%] border-slate/40 bg-parchment sm:max-w-sm">
                 <SheetHeader>
                   <SheetTitle className="font-display text-xl text-ink">Menu</SheetTitle>
                 </SheetHeader>
@@ -147,11 +147,11 @@ export function Navbar() {
             href="/"
             className="absolute left-1/2 -translate-x-1/2 text-center"
           >
-            <span className="font-script text-2xl text-ink sm:text-3xl">
-              Vimala
+            <span className="font-display text-xl font-light tracking-[0.22em] text-ink sm:text-2xl">
+              VIMALA
             </span>
-            <span className="block font-body text-[7px] font-medium uppercase tracking-[0.55em] text-stone sm:text-[8px]">
-              Silk House
+            <span className="block font-body text-[7px] font-medium uppercase tracking-[0.45em] text-stone sm:text-[8px]">
+              Silk House · Est. 1987
             </span>
           </Link>
 
@@ -169,7 +169,7 @@ export function Navbar() {
       </div>
 
       <nav
-        className="relative hidden border-b border-border bg-surface md:block"
+        className="relative hidden border-b border-slate/40 bg-parchment-warm md:block"
         onMouseLeave={() => setActiveMenu(null)}
       >
         <ul className="page-container flex items-center justify-center gap-7 py-3 lg:gap-9">

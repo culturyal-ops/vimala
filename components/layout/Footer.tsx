@@ -15,13 +15,14 @@ import { STORE, CONTACT } from "@/lib/store-info";
 export function Footer() {
   return (
     <>
-      <footer id="contact" className="bg-ink-soft text-ivory/70">
+      <footer id="contact" className="bg-ink/95 text-parchment/65">
         <div className="mx-auto max-w-[1440px] px-4 py-12 md:px-16 md:py-20">
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div>
-              <h3 className="mb-4 font-script text-3xl text-ivory">
-                Vimala Silk House
+              <h3 className="mb-1 font-display text-2xl font-light tracking-[0.15em] text-parchment">
+                VIMALA
               </h3>
+              <p className="mb-4 font-body text-[7px] uppercase tracking-[0.35em] text-antique/60">Silk House · Est. 1987</p>
               <p className="font-body text-sm leading-relaxed">
                 Kattappana&apos;s premier multi-brand fashion destination. Silks,
                 readymade garments, accessories and more for the whole family.
@@ -177,8 +178,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="bg-crimson py-4 text-center">
-          <p className="font-body text-xs text-ivory/90">
+        <div className="bg-rouge/80 py-4 text-center">
+          <p className="font-body text-xs text-parchment/70">
             &copy; {new Date().getFullYear()} Vimala Silk House · GSTIN {STORE.gstin} ·{" "}
             {STORE.rating.score}★ from {STORE.rating.count}+ reviews
           </p>

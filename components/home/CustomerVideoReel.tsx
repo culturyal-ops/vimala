@@ -46,8 +46,8 @@ function VideoFrame({ frame }: { frame: CustomerVideoFrame }) {
         onClick={togglePlay}
         disabled={!hasVideo}
         className={cn(
-          "relative block w-full overflow-hidden bg-surface-muted text-left",
-          "aspect-[9/16] border border-border",
+          "relative block w-full overflow-hidden bg-parchment-deep text-left",
+          "aspect-[9/16] border border-antique/30",
           hasVideo && "cursor-pointer",
           !hasVideo && "cursor-default"
         )}
@@ -92,7 +92,7 @@ function VideoFrame({ frame }: { frame: CustomerVideoFrame }) {
         {hasVideo && (
           <span
             className={cn(
-              "absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center bg-canvas/90 text-ink transition-opacity",
+              "absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-parchment/40 bg-parchment/90 text-ink transition-opacity",
               playing ? "opacity-0 group-hover:opacity-100" : "opacity-100"
             )}
           >
@@ -105,13 +105,13 @@ function VideoFrame({ frame }: { frame: CustomerVideoFrame }) {
         )}
 
         {!hasVideo && (
-          <span className="absolute bottom-3 left-3 right-3 font-body text-[9px] font-medium uppercase tracking-widest text-canvas/80">
+          <span className="absolute bottom-3 left-3 right-3 font-body text-[8px] font-medium uppercase tracking-[0.2em] text-parchment/75">
             Video soon
           </span>
         )}
 
         {frame.label && (
-          <span className="absolute bottom-0 left-0 right-0 bg-ink/50 px-2.5 py-2 font-body text-[10px] font-medium uppercase tracking-wide text-canvas backdrop-blur-[2px]">
+          <span className="absolute bottom-0 left-0 right-0 bg-ink/60 px-2.5 py-2 font-body text-[9px] font-medium uppercase tracking-[0.15em] text-parchment">
             {frame.label}
           </span>
         )}
@@ -131,24 +131,25 @@ export function CustomerVideoReel() {
   };
 
   return (
-    <section className="border-t border-gold/20 bg-canvas section-pad" aria-label="Loved across Kerala">
+    <section className="border-t border-antique/20 bg-parchment section-pad" aria-label="Loved across Kerala">
       <div className="page-container">
-        <div className="mb-8 flex flex-col gap-3 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-12 flex flex-col gap-3 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="mb-2 font-body text-[9px] uppercase tracking-[0.5em] text-stone">From Our Customers</p>
-            <h2 className="font-display text-3xl font-light text-ink md:text-4xl">
-              Loved Across <em className="font-script not-italic text-5xl text-crimson md:text-6xl">Kerala</em>
+            <p className="editorial-label mb-3">From Our Customers</p>
+            <h2 className="font-display text-4xl font-light leading-none text-ink md:text-5xl lg:text-[3.75rem]">
+              Loved Across{" "}
+              <em className="font-script not-italic text-rouge" style={{ fontSize: "1.05em" }}>Kerala</em>
             </h2>
-            <p className="mt-3 max-w-lg font-display text-sm font-light italic text-stone">
-              Real drapes, real celebrations. Scroll through moments from weddings,
-              festivals, and family visits to Vimala Silk House.
+            <p className="mt-4 max-w-lg font-display text-sm font-light italic text-stone">
+              Real drapes, real celebrations. Moments from weddings, festivals,
+              and family visits to Vimala Silk House.
             </p>
           </div>
           <div className="hidden gap-2 sm:flex">
             <button
               type="button"
               onClick={() => scroll("left")}
-              className="border border-border px-4 py-2 font-body text-[10px] font-medium uppercase tracking-widest text-ink hover:border-ink"
+              className="btn-editorial px-5 py-2.5 text-[8px]"
               aria-label="Scroll videos left"
             >
               ← Prev
@@ -156,7 +157,7 @@ export function CustomerVideoReel() {
             <button
               type="button"
               onClick={() => scroll("right")}
-              className="border border-border px-4 py-2 font-body text-[10px] font-medium uppercase tracking-widest text-ink hover:border-ink"
+              className="btn-editorial px-5 py-2.5 text-[8px]"
               aria-label="Scroll videos right"
             >
               Next →

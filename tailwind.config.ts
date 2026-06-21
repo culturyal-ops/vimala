@@ -10,57 +10,80 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Primary — warm terracotta-silk, not cool burgundy
+        rouge: {
+          DEFAULT: "#8B4A3A",
+          light: "#A45A46",
+          warm: "#B76E5D",
+          pale: "#D4A090",
+          deep: "#6B3328",
+          ink: "#4A2018",
+        },
+        // Secondary — warm parchment, aged paper
+        parchment: {
+          DEFAULT: "#F7F2EB",
+          warm: "#F3EEE6",
+          deep: "#EFE7DB",
+          aged: "#E8DDD0",
+          dark: "#DDD0C0",
+        },
+        // Accent — antique gold
+        antique: {
+          DEFAULT: "#D4B08A",
+          light: "#E0C4A0",
+          muted: "#C89F7A",
+          pale: "#EDD9C0",
+          dark: "#B8905A",
+        },
+        // Text
+        ink: {
+          DEFAULT: "#2A221D",
+          soft: "#3D3128",
+          muted: "#5C4F44",
+          light: "#7A6D62",
+          faint: "#A89D94",
+        },
+        // Preserved for compatibility
         canvas: {
-          DEFAULT: "#F8F4EE",
-          warm: "#F4EFE6",
-          cream: "#EDE8DE",
+          DEFAULT: "#F7F2EB",
+          warm: "#F3EEE6",
+          cream: "#EFE7DB",
         },
         surface: {
-          DEFAULT: "#F2EDE3",
-          muted: "#E8E2D6",
-          elevated: "#FDFAF5",
-        },
-        burgundy: {
-          DEFAULT: "#6B1525",
-          rich: "#56101D",
-          soft: "#7D2133",
+          DEFAULT: "#F3EEE6",
+          muted: "#EFE7DB",
+          elevated: "#FDFAF7",
         },
         crimson: {
-          DEFAULT: "#7A1525",
-          light: "#92293A",
-          dark: "#5C0F1B",
-          deep: "#3D0812",
+          DEFAULT: "#8B4A3A",
+          light: "#A45A46",
+          dark: "#6B3328",
+          deep: "#4A2018",
         },
         gold: {
-          DEFAULT: "#C8A96E",
-          light: "#D9BC85",
-          muted: "#B0925A",
-          pale: "#E8DEC8",
-          shimmer: "#E0D0AA",
+          DEFAULT: "#D4B08A",
+          light: "#E0C4A0",
+          muted: "#C89F7A",
+          pale: "#EDD9C0",
+          shimmer: "#E8D4B8",
         },
         ivory: {
-          DEFAULT: "#FBF8F1",
-          warm: "#F5F0E4",
-          dark: "#EAE4D8",
-          cream: "#F0EAD8",
-        },
-        ink: {
-          DEFAULT: "#1A1614",
-          soft: "#2D2926",
-          muted: "#524D48",
-          lighter: "#6B6560",
+          DEFAULT: "#FDFAF7",
+          warm: "#F7F2EB",
+          dark: "#EFE7DB",
+          cream: "#F3EEE6",
         },
         stone: {
-          DEFAULT: "#78716C",
-          light: "#A8A29E",
-          dark: "#57534E",
-          warm: "#8C857F",
+          DEFAULT: "#8C7D72",
+          light: "#B0A498",
+          dark: "#6B5E54",
+          warm: "#9E8F84",
         },
         slate: {
-          DEFAULT: "#E7E5E4",
-          light: "#F5F5F4",
-          dark: "#D6D3D1",
-          subtle: "#F0EEEB",
+          DEFAULT: "#E0D8D0",
+          light: "#EDE8E2",
+          dark: "#CEC4BA",
+          subtle: "#E8E2DA",
         },
         border: "hsl(var(--border))",
         background: "hsl(var(--canvas))",
@@ -97,73 +120,74 @@ const config: Config = {
         ring: "hsl(var(--ring))",
       },
       fontFamily: {
-        display: ["var(--font-display)", "Cormorant Garamond", "Playfair Display", "Georgia", "serif"],
-        body: ["var(--font-body)", "Outfit", "Inter", "system-ui", "sans-serif"],
+        // Primary display — high contrast editorial serif
+        display: ["var(--font-display)", "Cormorant Garamond", "Georgia", "serif"],
+        // Body — clean, airy, readable
+        body: ["var(--font-body)", "Outfit", "system-ui", "sans-serif"],
         serif: ["var(--font-display)", "Georgia", "serif"],
+        // Script — used sparingly, one accent word only
         script: ["var(--font-script)", "Great Vibes", "cursive"],
       },
       fontSize: {
-        // Display sizes for hero and major headings
-        "display-2xl": ["5.5rem", { lineHeight: "0.95", letterSpacing: "-0.04em", fontWeight: "300" }],
-        "display-xl": ["4.5rem", { lineHeight: "0.95", letterSpacing: "-0.035em", fontWeight: "300" }],
-        "display-lg": ["3.5rem", { lineHeight: "1.0", letterSpacing: "-0.03em", fontWeight: "400" }],
-        "display-md": ["2.5rem", { lineHeight: "1.05", letterSpacing: "-0.025em", fontWeight: "400" }],
-        "display-sm": ["2rem", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "500" }],
-        
-        // Heading scales
-        "h1": ["3rem", { lineHeight: "1.1", letterSpacing: "-0.025em", fontWeight: "500" }],
-        "h2": ["2.25rem", { lineHeight: "1.15", letterSpacing: "-0.02em", fontWeight: "500" }],
-        "h3": ["1.75rem", { lineHeight: "1.2", letterSpacing: "-0.015em", fontWeight: "500" }],
-        "h4": ["1.375rem", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
-        
-        // Body text
-        "body-xl": ["1.25rem", { lineHeight: "1.65", letterSpacing: "-0.01em" }],
-        "body-lg": ["1.125rem", { lineHeight: "1.7", letterSpacing: "0" }],
-        "body": ["1rem", { lineHeight: "1.75", letterSpacing: "0" }],
-        "body-sm": ["0.9375rem", { lineHeight: "1.7", letterSpacing: "0.005em" }],
+        // Oversized editorial display — the key to luxury feel
+        "display-hero": ["7rem", { lineHeight: "0.9", letterSpacing: "-0.03em", fontWeight: "300" }],
+        "display-2xl": ["5.5rem", { lineHeight: "0.92", letterSpacing: "-0.03em", fontWeight: "300" }],
+        "display-xl": ["4.5rem", { lineHeight: "0.94", letterSpacing: "-0.025em", fontWeight: "300" }],
+        "display-lg": ["3.5rem", { lineHeight: "0.97", letterSpacing: "-0.02em", fontWeight: "300" }],
+        "display-md": ["2.75rem", { lineHeight: "1.05", letterSpacing: "-0.018em", fontWeight: "400" }],
+        "display-sm": ["2.125rem", { lineHeight: "1.1", letterSpacing: "-0.012em", fontWeight: "400" }],
+        "h1": ["3rem", { lineHeight: "1.08", letterSpacing: "-0.022em", fontWeight: "400" }],
+        "h2": ["2.25rem", { lineHeight: "1.12", letterSpacing: "-0.018em", fontWeight: "400" }],
+        "h3": ["1.75rem", { lineHeight: "1.18", letterSpacing: "-0.01em", fontWeight: "400" }],
+        "h4": ["1.375rem", { lineHeight: "1.28", letterSpacing: "-0.005em", fontWeight: "500" }],
+        "body-xl": ["1.25rem", { lineHeight: "1.7", letterSpacing: "0" }],
+        "body-lg": ["1.125rem", { lineHeight: "1.72", letterSpacing: "0" }],
+        "body": ["1rem", { lineHeight: "1.78", letterSpacing: "0.005em" }],
+        "body-sm": ["0.9375rem", { lineHeight: "1.72", letterSpacing: "0.005em" }],
         "body-xs": ["0.875rem", { lineHeight: "1.65", letterSpacing: "0.01em" }],
-        
-        // UI elements
-        "label": ["0.8125rem", { lineHeight: "1.5", letterSpacing: "0.08em", fontWeight: "500" }],
-        "caption": ["0.75rem", { lineHeight: "1.5", letterSpacing: "0.05em" }],
+        "label": ["0.6875rem", { lineHeight: "1.5", letterSpacing: "0.14em", fontWeight: "500" }],
+        "caption": ["0.6875rem", { lineHeight: "1.5", letterSpacing: "0.06em" }],
       },
+      // No rounded corners — luxury fashion is sharp
       borderRadius: {
-        lg: "10px",
-        md: "8px",
-        sm: "6px",
-        xl: "14px",
-        "2xl": "20px",
-        "3xl": "28px",
+        DEFAULT: "0px",
+        sm: "2px",
+        md: "2px",
+        lg: "2px",
+        xl: "2px",
+        "2xl": "2px",
+        "3xl": "4px",
+        full: "9999px",
       },
       spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
-        '26': '6.5rem',
-        '30': '7.5rem',
+        "18": "4.5rem",
+        "22": "5.5rem",
+        "26": "6.5rem",
+        "30": "7.5rem",
       },
       boxShadow: {
-        // Premium shadows with subtle warmth
-        "premium": "0 24px 64px -16px rgba(26, 22, 20, 0.08), 0 8px 24px -8px rgba(139, 30, 63, 0.04)",
-        "premium-sm": "0 4px 20px -4px rgba(26, 22, 20, 0.05), 0 2px 8px -2px rgba(139, 30, 63, 0.03)",
-        "premium-md": "0 12px 40px -12px rgba(26, 22, 20, 0.09), 0 4px 16px -4px rgba(139, 30, 63, 0.04)",
-        "premium-lg": "0 32px 80px -24px rgba(26, 22, 20, 0.12), 0 12px 32px -12px rgba(139, 30, 63, 0.05)",
-        "premium-xl": "0 48px 120px -32px rgba(26, 22, 20, 0.14), 0 16px 48px -16px rgba(139, 30, 63, 0.06)",
-        
-        // Glow effects
-        "glow-gold": "0 0 32px -8px rgba(201, 169, 110, 0.3)",
-        "glow-crimson": "0 0 32px -8px rgba(139, 30, 63, 0.25)",
-        
-        // Inner shadows
-        "inner-subtle": "inset 0 1px 2px 0 rgba(26, 22, 20, 0.05)",
-        "inner-premium": "inset 0 2px 8px 0 rgba(26, 22, 20, 0.08)",
+        // Flat, paper-weight shadows — no glows, no blurs
+        "premium": "0 2px 20px rgba(42, 34, 29, 0.07)",
+        "premium-sm": "0 1px 8px rgba(42, 34, 29, 0.05)",
+        "premium-md": "0 4px 30px rgba(42, 34, 29, 0.09)",
+        "premium-lg": "0 8px 48px rgba(42, 34, 29, 0.11)",
+        "premium-xl": "0 16px 64px rgba(42, 34, 29, 0.13)",
+        // Paper shadow for polaroid/frame elements
+        "paper": "2px 4px 12px rgba(42, 34, 29, 0.12), 0 1px 3px rgba(42, 34, 29, 0.08)",
+        "paper-lg": "4px 8px 24px rgba(42, 34, 29, 0.14), 0 2px 6px rgba(42, 34, 29, 0.08)",
+        // Insets
+        "inner-subtle": "inset 0 1px 2px rgba(42, 34, 29, 0.04)",
+        // Legacy compatibility
+        "glow-gold": "0 0 24px rgba(212, 176, 138, 0.2)",
+        "glow-crimson": "0 0 24px rgba(139, 74, 58, 0.15)",
       },
       transitionDuration: {
-        DEFAULT: "300ms",
+        DEFAULT: "350ms",
       },
       transitionTimingFunction: {
-        'premium': 'cubic-bezier(0.4, 0, 0.2, 1)',
-        'smooth': 'cubic-bezier(0.33, 1, 0.68, 1)',
-        'bounce-soft': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        "premium": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "smooth": "cubic-bezier(0.33, 1, 0.68, 1)",
+        "editorial": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
       },
       keyframes: {
         marquee: {
@@ -179,45 +203,25 @@ const config: Config = {
           to: { height: "0" },
         },
         fadeIn: {
-          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        fadeInScale: {
-          "0%": { opacity: "0", transform: "scale(0.95)" },
-          "100%": { opacity: "1", transform: "scale(1)" },
-        },
-        shimmer: {
-          "0%": { backgroundPosition: "-200% center" },
-          "100%": { backgroundPosition: "200% center" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-8px)" },
+        revealUp: {
+          "0%": { opacity: "0", transform: "translateY(32px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
         slideUpFade: {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        slideDownFade: {
-          "0%": { opacity: "0", transform: "translateY(-20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        scaleIn: {
-          "0%": { opacity: "0", transform: "scale(0.9)" },
-          "100%": { opacity: "1", transform: "scale(1)" },
-        },
       },
       animation: {
-        marquee: "marquee 60s linear infinite",
+        marquee: "marquee 70s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        fadeIn: "fadeIn 0.5s ease-out",
-        fadeInScale: "fadeInScale 0.4s ease-out",
-        shimmer: "shimmer 3s linear infinite",
-        float: "float 3s ease-in-out infinite",
+        fadeIn: "fadeIn 0.6s ease-out",
+        revealUp: "revealUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         slideUpFade: "slideUpFade 0.5s ease-out",
-        slideDownFade: "slideDownFade 0.5s ease-out",
-        scaleIn: "scaleIn 0.3s ease-out",
       },
     },
   },

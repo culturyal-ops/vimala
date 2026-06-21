@@ -5,42 +5,43 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { CRAFT_STATS } from "@/lib/constants";
-import { Button } from "@/components/ui/button";
 
 export function CraftStory() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="bg-ivory-cream overflow-hidden">
-      {/* Top: full-width atmospheric image with text overlay */}
-      <div className="relative h-[55vw] max-h-[520px] min-h-[300px] w-full">
+    <section ref={ref} className="bg-parchment overflow-hidden">
+
+      {/* ── Full-bleed image with oversized text overlay ── */}
+      <div className="relative w-full overflow-hidden" style={{ height: "min(62vw, 640px)", minHeight: 320 }}>
         <Image
-          src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=1600"
-          alt="Inside Vimala Silk House"
+          src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=1800"
+          alt="Vimala Silk House interior, Kattappana"
           fill
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-crimson-deep/80 via-crimson/40 to-transparent" />
-        <div className="absolute inset-0 damask-pattern opacity-10" />
+        {/* Left gradient — text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/65 via-ink/25 to-transparent" />
+        {/* Bottom fade for next section bleed */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-parchment to-transparent" />
+
         <div className="absolute inset-0 flex items-center">
           <div className="page-container">
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="max-w-lg"
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="max-w-xl"
             >
-              <p className="mb-3 font-body text-[9px] uppercase tracking-[0.5em] text-gold/70">
-                Est. 1987, Kattappana
-              </p>
-              <h2 className="font-display text-3xl font-light text-ivory md:text-5xl">
-                Kattappana&apos;s Home for
-                <br />
-                <span className="font-script text-5xl md:text-7xl">Silk &amp; Style</span>
+              <p className="editorial-label mb-4 text-antique/75">Est. 1987, Kattappana</p>
+              {/* Large display serif — refined, not script */}
+              <h2 className="font-display text-4xl font-light leading-[0.95] text-parchment md:text-5xl lg:text-6xl xl:text-7xl">
+                Kattappana&apos;s Home
+                <br />for Silk &amp; <em className="font-script not-italic text-antique" style={{ fontSize: "1.15em" }}>Style</em>
               </h2>
-              <p className="mt-4 font-display text-sm font-light italic text-ivory/60 md:text-base">
+              <p className="mt-5 max-w-sm font-display text-sm font-light italic text-parchment/55 leading-relaxed">
                 Three generations of trust. Eight departments under one roof.
               </p>
             </motion.div>
@@ -48,96 +49,112 @@ export function CraftStory() {
         </div>
       </div>
 
-      {/* Story section: small portrait left, body text centre, large lifestyle image right */}
+      {/* ── Three-column editorial story layout ── */}
       <div className="page-container py-16 md:py-24">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-6 lg:gap-10">
 
-          {/* Left column: small stacked images like the Italy reference */}
+          {/* Left: two portrait images, stacked and offset */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="flex flex-row gap-4 md:col-span-3 md:flex-col"
+            transition={{ delay: 0.15, duration: 0.8 }}
+            className="md:col-span-3 md:col-start-1"
           >
-            <div className="relative aspect-[3/4] w-1/2 overflow-hidden md:w-full">
+            {/* Top portrait — taller */}
+            <div className="relative aspect-[3/4] w-full overflow-hidden bg-parchment-deep">
               <Image
-                src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400"
-                alt="Silk weaving detail"
-                fill
-                className="object-cover grayscale-[20%] sepia-[10%]"
-                sizes="(max-width: 768px) 50vw, 200px"
-              />
-            </div>
-            <div className="relative aspect-square w-1/2 overflow-hidden md:w-full">
-              <Image
-                src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=400"
-                alt="Gold jewellery accessories"
+                src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500"
+                alt="Silk weaving craftsmanship"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 50vw, 200px"
+                sizes="(max-width: 768px) 90vw, 220px"
+              />
+              {/* Vintage frame inner border */}
+              <div className="absolute inset-[6px] border border-antique/25 pointer-events-none z-10" />
+            </div>
+            {/* Small square image pushed left — creates asymmetry */}
+            <div className="relative mt-3 aspect-square w-3/4 overflow-hidden bg-parchment-deep ml-auto">
+              <Image
+                src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=350"
+                alt="Antique gold jewellery"
+                fill
+                className="object-cover"
+                sizes="180px"
               />
             </div>
           </motion.div>
 
-          {/* Centre: story text */}
+          {/* Centre: story prose — the emotional core */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.35, duration: 0.7 }}
-            className="flex flex-col justify-center md:col-span-5"
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="flex flex-col justify-center md:col-span-5 md:col-start-4 md:px-4 lg:px-6"
           >
-            <div className="mb-6 h-[1px] w-10 bg-gold/50" />
-            <p className="mb-2 font-body text-[9px] uppercase tracking-[0.5em] text-stone">Our Heritage</p>
-            <h3 className="mb-5 font-display text-2xl font-light text-ink md:text-3xl">
+            {/* Ornamental rule */}
+            <div className="mb-7 flex items-center gap-4">
+              <div className="h-px flex-1 bg-antique/40" />
+              <span className="font-body text-[9px] uppercase tracking-[0.3em] text-antique/60">Our Heritage</span>
+              <div className="h-px w-6 bg-antique/40" />
+            </div>
+
+            <h3 className="mb-6 font-display text-3xl font-light leading-tight text-ink md:text-4xl">
               More than a store —<br />a family institution
             </h3>
-            <p className="font-display text-sm font-light leading-loose text-ink/55 md:text-base">
+
+            <p className="font-display text-[15px] font-light leading-[1.9] text-ink/55 md:text-base">
               Since 1987, Vimala Silk House has been where Kattappana&apos;s families
               come for every milestone — weddings, Onam, first days of school,
-              and everything in between. Pure silks from the finest looms, bridal
-              trousseaus, and eight departments of fashion under one roof.
+              and everything in between.
             </p>
-            <p className="mt-4 font-display text-sm font-light leading-loose text-ink/55 md:text-base">
-              Every saree is chosen with care. Every customer leaves with
-              something that feels made for them.
+            <p className="mt-5 font-display text-[15px] font-light leading-[1.9] text-ink/55 md:text-base">
+              Pure silks from the finest looms, bridal trousseaus, and eight
+              departments of fashion under one roof. Every saree is chosen with
+              care. Every customer leaves with something that feels made for them.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-8 border-t border-gold/20 pt-8">
+            {/* Stats — clean, no boxes */}
+            <div className="mt-10 flex gap-10 border-t border-antique/20 pt-8">
               {CRAFT_STATS.map((stat) => (
                 <div key={stat.value}>
-                  <span className="block font-display text-2xl font-medium text-crimson">{stat.value}</span>
-                  <span className="font-body text-[9px] uppercase tracking-[0.3em] text-stone">{stat.label}</span>
+                  <span className="block font-display text-3xl font-light text-rouge md:text-4xl">{stat.value}</span>
+                  <span className="mt-1 block font-body text-[9px] uppercase tracking-[0.2em] text-stone">{stat.label}</span>
                 </div>
               ))}
             </div>
 
-            <Button variant="ghost" asChild className="mt-8 w-fit border border-gold/30 px-6 text-[10px] uppercase tracking-[0.25em] text-ink hover:border-crimson hover:text-crimson">
-              <Link href="/about">Discover Our Story</Link>
-            </Button>
+            <Link
+              href="/about"
+              className="btn-editorial-rouge mt-10 w-fit"
+            >
+              Discover Our Story
+            </Link>
           </motion.div>
 
-          {/* Right: large lifestyle image */}
+          {/* Right: large lifestyle image with floating quote */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="relative md:col-span-4"
+            transition={{ delay: 0.45, duration: 0.9 }}
+            className="relative md:col-span-4 md:col-start-9"
           >
-            <div className="relative aspect-[3/4] w-full overflow-hidden">
+            <div className="relative aspect-[3/4] w-full overflow-hidden bg-parchment-deep">
               <Image
                 src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=700"
-                alt="Customer in bridal saree"
+                alt="Customer wearing a Vimala bridal saree"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 100vw, 380px"
               />
+              <div className="absolute inset-[6px] border border-antique/20 pointer-events-none z-10" />
             </div>
-            {/* Floating caption card like the Italy reference */}
-            <div className="absolute -bottom-4 -left-4 hidden border border-gold/30 bg-ivory-cream px-5 py-4 shadow-premium-sm md:block">
-              <p className="font-display text-xs italic text-ink/60">
+
+            {/* Floating quote card — polaroid style */}
+            <div className="absolute -bottom-5 -left-5 hidden max-w-[220px] border-l-2 border-antique/60 bg-parchment pl-4 pr-5 py-4 shadow-paper md:block">
+              <p className="font-display text-xs italic leading-relaxed text-ink/55">
                 &ldquo;Every visit feels like a celebration.&rdquo;
               </p>
-              <p className="mt-1 font-body text-[9px] uppercase tracking-widest text-stone">— Anjali Menon, Kochi</p>
+              <p className="mt-2 font-body text-[8px] uppercase tracking-[0.2em] text-stone">— Anjali Menon, Kochi</p>
             </div>
           </motion.div>
 

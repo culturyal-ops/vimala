@@ -14,43 +14,47 @@ const TABS = [
   { id: "trending", label: "Trending" },
 ] as const;
 
-type TabbedProductSectionProps = {
-  catalog: EnrichedProduct[];
-};
+type TabbedProductSectionProps = { catalog: EnrichedProduct[] };
 
 export function TabbedProductSection({ catalog }: TabbedProductSectionProps) {
   const [activeTab, setActiveTab] = useState<HomeProductTab>("new");
-  const products = useMemo(
-    () => getHomeProductsForTab(activeTab, catalog),
-    [activeTab, catalog]
-  );
+  const products = useMemo(() => getHomeProductsForTab(activeTab, catalog), [activeTab, catalog]);
 
   return (
-    <section className="border-t border-gold/20 bg-canvas section-pad">
+    <section className="bg-parchment section-pad">
       <div className="page-container">
-        <div className="mb-8 flex items-end justify-between border-b border-gold/20 pb-5">
+
+        {/* Section header — asymmetric editorial */}
+        <div className="mb-12 flex flex-col gap-1 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-2 font-body text-[9px] uppercase tracking-[0.5em] text-stone">Curated Edit</p>
-            <h2 className="font-display text-3xl font-light text-ink md:text-4xl">Shop the <em className="font-script not-italic text-crimson">Selection</em></h2>
+            <p className="editorial-label mb-3">Curated Edit</p>
+            {/* Mixed serif + script heading */}
+            <h2 className="font-display text-4xl font-light leading-none text-ink md:text-5xl lg:text-[3.75rem]">
+              Shop the{" "}
+              <em className="font-script not-italic text-rouge" style={{ fontSize: "1.05em" }}>
+                Selection
+              </em>
+            </h2>
           </div>
           <Link
             href="/shop"
-            className="hidden font-body text-[9px] font-medium uppercase tracking-[0.25em] text-ink-muted hover:text-crimson sm:inline"
+            className="mt-4 self-end font-body text-[9px] uppercase tracking-[0.25em] text-stone transition-colors hover:text-rouge md:mt-0 md:pb-2"
           >
-            View all →
+            View All →
           </Link>
         </div>
 
-        <div className="mb-8 flex gap-7 overflow-x-auto border-b border-gold/20 pb-px scrollbar-none">
+        {/* Tabs — thin lines, no background fill */}
+        <div className="mb-10 flex gap-8 overflow-x-auto border-b border-antique/20 scrollbar-none">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               type="button"
               onClick={() => setActiveTab(tab.id)}
               className={cn(
-                "shrink-0 border-b-2 pb-3 font-body text-[10px] font-medium uppercase tracking-[0.2em] transition-colors",
+                "shrink-0 pb-3.5 font-body text-[9px] uppercase tracking-[0.2em] transition-colors border-b-[1.5px] -mb-px",
                 activeTab === tab.id
-                  ? "border-crimson text-crimson"
+                  ? "border-rouge text-rouge"
                   : "border-transparent text-stone hover:text-ink"
               )}
             >
@@ -59,6 +63,7 @@ export function TabbedProductSection({ catalog }: TabbedProductSectionProps) {
           ))}
         </div>
 
+        {/* Product grid */}
         <div className="product-grid">
           {products.map((p) => (
             <CatalogProductCard
@@ -78,6 +83,7 @@ export function TabbedProductSection({ catalog }: TabbedProductSectionProps) {
             />
           ))}
         </div>
+
       </div>
     </section>
   );
